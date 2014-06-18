@@ -3,7 +3,7 @@
 <repositories xmlns="" version="1.0">
 <repo quality="experimental" status="unofficial">
     <name>chaos</name>
-    <description>Miscellaneous ebuilds for chaotic things</description>
+    <description>Miscellaneous ebuilds from chaoskagami's git</description>
     <homepage>http://github.com/chaoskagami/chaos-overlay</homepage>
     <source type="git">git://github.com/chaoskagami/chaos-overlay.git</source>
 </repo>
