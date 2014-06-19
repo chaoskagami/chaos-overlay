@@ -30,7 +30,8 @@ src_unpack() {
 	ln -s '${DISTDIR}/TrueCrypt 7.1a Source.tar.gz' '${DISTDIR}/truecrypt-7.1a.tar.gz'
 	ln -s '${DISTDIR}/pkcs11.h*' '${DISTDIR}/truecrypt-7.1a-pkcs11.h'
 	
-	echo ${A}
+	unpack truecrypt-7.1a.tar.gz
+	unpack truecrypt-7.1a-pkcs.h
 }
 
 pkg_setup() {
