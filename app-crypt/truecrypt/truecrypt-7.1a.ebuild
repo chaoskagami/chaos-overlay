@@ -48,7 +48,7 @@ src_prepare() {
 	epatch "${FILESDIR}/execstack-fix.diff"
 	epatch "${FILESDIR}/${P}-build.patch"
 	mkdir "${T}"/pkcs11 || die
-	ln -s "${DISTDIR}"/${P}-pkcs11.h "${T}"/pkcs11/pkcs11.h || die
+	ln -s "${DISTDIR}"/pkcs11.h* "${T}"/pkcs11/pkcs11.h || die
 }
 
 src_compile() {
