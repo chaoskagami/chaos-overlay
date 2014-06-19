@@ -24,13 +24,13 @@ RDEPEND=">=sys-fs/lvm2-2.02.45
 DEPEND="${RDEPEND}
 	!ppc? ( dev-lang/nasm )"
 
-S="${WORKDIR}/${P}-source"
+S="${WORKDIR}/${P}"
 
 src_unpack() {
 	ln -s '${DISTDIR}/TrueCrypt 7.1a Source.tar.gz' '${DISTDIR}/truecrypt-7.1a.tar.gz'
 	ln -s '${DISTDIR}/pkcs11.h*' '${DISTDIR}/truecrypt-7.1a-pkcs11.h'
-
-	unpack ${DISTDIR}/truecrypt-7.1a.tar.gz
+	
+	echo ${A}
 }
 
 pkg_setup() {
