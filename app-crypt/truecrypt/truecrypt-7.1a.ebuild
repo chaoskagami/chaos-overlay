@@ -24,7 +24,7 @@ RDEPEND=">=sys-fs/lvm2-2.02.45
 DEPEND="${RDEPEND}
 	!ppc? ( dev-lang/nasm )"
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}/${P}-source"
 
 pkg_setup() {
 	local CONFIG_CHECK="~BLK_DEV_DM ~DM_CRYPT ~FUSE_FS ~CRYPTO ~CRYPTO_XTS"
