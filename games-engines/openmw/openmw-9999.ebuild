@@ -28,7 +28,7 @@ RDEPEND=">=dev-games/mygui-3.2.0
 	media-libs/openal
 	>=sci-physics/bullet-2.80
 	devtools? ( dev-qt/qtxmlpatterns:4 )
-	ffmpeg? ( media-video/ffmpeg )
+	ffmpeg? ( virtual/ffmpeg )
 	launcher? ( app-arch/unshield )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
