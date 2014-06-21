@@ -13,7 +13,7 @@ inherit eutils gnome2-utils fdo-mime
 
 DESCRIPTION="Installer, launcher and supplementary files for Valve's Steam client"
 HOMEPAGE="http://steampowered.com"
-SRC_URI="http://repo.steampowered.com/steam/pool/steam/s/steam_${PV}.tar.gz"
+SRC_URI="http://repo.steampowered.com/steam/pool/steam/s/steam/steam_${PV}.tar.gz"
 
 KEYWORDS="-* ~amd64 ~x86"
 LICENSE="ValveSteamLicense"
