@@ -63,6 +63,7 @@ src_configure() {
 		-DSYSCONFDIR="${GAMES_SYSCONFDIR}"/${PN}
 		-DUSE_AUDIERE=OFF
 		-DUSE_SYSTEM_TINYXML=ON
+		-D__STDC_CONSTANT_MACROS
 		$(cmake-utils_use_use ffmpeg FFMPEG)
 	)
 
