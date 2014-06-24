@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}"
 
 src_unpack() {
 	unpack "${A}"
-	cd "${A}"
+	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-fixbool.patch"	
 }
