@@ -25,6 +25,13 @@ DEPEND=">=x11-libs/gtk+-2.8.0:2
 	x11-libs/agg"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	unpack "${A}"
+	cd "${A}"
+
+	epatch "${FILESDIR}/${P}-fixbool.patch"	
+}
+
 src_configure() {
 	egamesconf --datadir=/usr/share || die "egamesconf failed"
 }
