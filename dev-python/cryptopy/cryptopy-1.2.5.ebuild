@@ -19,7 +19,7 @@ src_unpack() {
 }
 
 src_prepare() {
-	EPATCH_FORCE="yes" epatch "${FILESDIR}/${P}-unicode.patch.old"
+	EPATCH_FORCE="yes" EPATCH_OPTS="-u -p1" epatch "${FILESDIR}/${P}-unicode.patch"
 }
 
 src_compile() {
