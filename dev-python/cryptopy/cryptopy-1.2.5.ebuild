@@ -15,7 +15,11 @@ KEYWORDS="~x86 ~amd64"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-unicode.patch"
+#	epatch "${FILESDIR}/${P}-unicode.patch"
+	for files in `find ${S}`; do
+		tr -cd '\11\12\15\40-\176' < ${files} > ${files}.fixed
+		mv ${files}.fixed ${files}
+	done
 }
 
 src_compile() {
