@@ -1,189 +1,504 @@
-diff -r cryptopy-1.2.5/binascii_plus.py cryptopy-1.2.5/binascii_plus.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/app/filecrypt.py cryptopy-1.2.5/crypto/app/filecrypt.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/app/__init__.py cryptopy-1.2.5/crypto/app/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/aes_cbc.py cryptopy-1.2.5/crypto/cipher/aes_cbc.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/aes.py cryptopy-1.2.5/crypto/cipher/aes.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/aes_test.py cryptopy-1.2.5/crypto/cipher/aes_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/arc4.py cryptopy-1.2.5/crypto/cipher/arc4.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/arc4_test.py cryptopy-1.2.5/crypto/cipher/arc4_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/base.py cryptopy-1.2.5/crypto/cipher/base.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/cbc.py cryptopy-1.2.5/crypto/cipher/cbc.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/cbc_test.py cryptopy-1.2.5/crypto/cipher/cbc_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/ccm.py cryptopy-1.2.5/crypto/cipher/ccm.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/ccm_test.py cryptopy-1.2.5/crypto/cipher/ccm_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/icedoll.py cryptopy-1.2.5/crypto/cipher/icedoll.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/icedoll_test.py cryptopy-1.2.5/crypto/cipher/icedoll_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/__init__.py cryptopy-1.2.5/crypto/cipher/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/rijndael.py cryptopy-1.2.5/crypto/cipher/rijndael.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/rijndael_test.py cryptopy-1.2.5/crypto/cipher/rijndael_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/tkip_encr.py cryptopy-1.2.5/crypto/cipher/tkip_encr.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/trolldoll.py cryptopy-1.2.5/crypto/cipher/trolldoll.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/wep.py cryptopy-1.2.5/crypto/cipher/wep.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/cipher/wep_test.py cryptopy-1.2.5/crypto/cipher/wep_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/common.py cryptopy-1.2.5/crypto/common.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/entropy/__init__.py cryptopy-1.2.5/crypto/entropy/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/entropy/pagingEntropy.py cryptopy-1.2.5/crypto/entropy/pagingEntropy.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/entropy/prn_rijndael.py cryptopy-1.2.5/crypto/entropy/prn_rijndael.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/errors.py cryptopy-1.2.5/crypto/errors.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/hash.py cryptopy-1.2.5/crypto/hash/hash.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/__init__.py cryptopy-1.2.5/crypto/hash/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/md5Hash.py cryptopy-1.2.5/crypto/hash/md5Hash.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/md5Hash_test.py cryptopy-1.2.5/crypto/hash/md5Hash_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/sha1Hash.py cryptopy-1.2.5/crypto/hash/sha1Hash.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/hash/sha1Hash_test.py cryptopy-1.2.5/crypto/hash/sha1Hash_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/icedoll_test.py cryptopy-1.2.5/crypto/icedoll_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/__init__.py cryptopy-1.2.5/crypto/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/hmacHash.py cryptopy-1.2.5/crypto/keyedHash/hmacHash.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/__init__.py cryptopy-1.2.5/crypto/keyedHash/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/michael.py cryptopy-1.2.5/crypto/keyedHash/michael.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/michael_test.py cryptopy-1.2.5/crypto/keyedHash/michael_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/passwords/__init__.py cryptopy-1.2.5/crypto/passwords/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/passwords/passwordfactory.py cryptopy-1.2.5/crypto/passwords/passwordfactory.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/fmath/__init__.py cryptopy-1.2.5/fmath/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/fmath/prime.py cryptopy-1.2.5/fmath/prime.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/fmath/primes_to_5k.py cryptopy-1.2.5/fmath/primes_to_5k.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/fmath/prime_test.py cryptopy-1.2.5/fmath/prime_test.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/__init__.py cryptopy-1.2.5/__init__.py
-0a1
-> # coding: utf-8
-diff -r cryptopy-1.2.5/setup.py cryptopy-1.2.5/setup.py
-0a1
-> # coding: utf-8
+diff -r -u a/cryptopy-1.2.5/binascii_plus.py b/cryptopy-1.2.5/binascii_plus.py
+--- a/cryptopy-1.2.5/binascii_plus.py	2003-02-21 22:40:29.000000000 -0500
++++ b/cryptopy-1.2.5/binascii_plus.py	2014-06-26 06:24:50.606811193 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ binascii_plus
+ 
+     Enhanced hex packet input and display
+diff -r -u a/cryptopy-1.2.5/crypto/app/filecrypt.py b/cryptopy-1.2.5/crypto/app/filecrypt.py
+--- a/cryptopy-1.2.5/crypto/app/filecrypt.py	2003-02-28 20:18:06.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/app/filecrypt.py	2014-06-26 06:26:36.345809035 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ cipher.app.filecrypt
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/app/__init__.py b/cryptopy-1.2.5/crypto/app/__init__.py
+--- a/cryptopy-1.2.5/crypto/app/__init__.py	2003-02-22 12:11:46.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/app/__init__.py	2014-06-26 06:26:45.341808852 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.app
+ 
+     Sample applications of CryptoPy
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/aes_cbc.py b/cryptopy-1.2.5/crypto/cipher/aes_cbc.py
+--- a/cryptopy-1.2.5/crypto/cipher/aes_cbc.py	2003-02-11 20:54:34.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/aes_cbc.py	2014-06-26 06:26:49.301808771 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.aes_cbc
+ 
+     AES_CBC Encryption Algorithm
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py b/cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py	2003-02-22 09:48:00.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py	2014-06-26 06:26:54.342808668 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.cbc_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/aes.py b/cryptopy-1.2.5/crypto/cipher/aes.py
+--- a/cryptopy-1.2.5/crypto/cipher/aes.py	2003-02-11 20:51:07.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/aes.py	2014-06-26 06:26:59.168808570 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.aes
+ 
+     AES Encryption Algorithm
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py b/cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py
+--- a/cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py	2003-02-13 01:26:17.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py	2014-06-26 06:27:03.430808483 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.aes_sbox_analysis
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/aes_test.py b/cryptopy-1.2.5/crypto/cipher/aes_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/aes_test.py	2003-02-11 20:52:39.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/aes_test.py	2014-06-26 06:27:06.866808412 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.aes_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/arc4.py b/cryptopy-1.2.5/crypto/cipher/arc4.py
+--- a/cryptopy-1.2.5/crypto/cipher/arc4.py	2003-02-11 21:42:18.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/arc4.py	2014-06-26 06:27:10.617808336 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.arc4
+ 
+     A Stream Cipher Encryption Algorithm 'Arcfour'
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/arc4_test.py b/cryptopy-1.2.5/crypto/cipher/arc4_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/arc4_test.py	2003-02-11 21:42:54.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/arc4_test.py	2014-06-26 06:27:14.290808261 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.arc4_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/base.py b/cryptopy-1.2.5/crypto/cipher/base.py
+--- a/cryptopy-1.2.5/crypto/cipher/base.py	2003-02-22 12:00:04.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/base.py	2014-06-26 06:27:18.133808183 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.base
+ 
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/cbc.py b/cryptopy-1.2.5/crypto/cipher/cbc.py
+--- a/cryptopy-1.2.5/crypto/cipher/cbc.py	2003-02-11 21:05:05.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/cbc.py	2014-06-26 06:27:21.313808118 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.cbc
+ 
+     CBC mode of encryption for block ciphers.
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/cbc_test.py b/cryptopy-1.2.5/crypto/cipher/cbc_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/cbc_test.py	2003-02-11 21:06:21.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/cbc_test.py	2014-06-26 06:27:25.089808041 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.cbc_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/ccm.py b/cryptopy-1.2.5/crypto/cipher/ccm.py
+--- a/cryptopy-1.2.5/crypto/cipher/ccm.py	2003-02-11 21:16:13.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/ccm.py	2014-06-26 06:27:28.597807969 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.ccm
+ 
+     CCM block cipher mode
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/ccm_test.py b/cryptopy-1.2.5/crypto/cipher/ccm_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/ccm_test.py	2003-02-11 21:14:50.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/ccm_test.py	2014-06-26 06:27:32.278807894 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.ccm_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/icedoll.py b/cryptopy-1.2.5/crypto/cipher/icedoll.py
+--- a/cryptopy-1.2.5/crypto/cipher/icedoll.py	2003-02-11 21:36:22.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/icedoll.py	2014-06-26 06:27:39.244807752 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.icedoll
+ 
+     Modification of Rijndael to provide infinite error extension.
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/icedoll_test.py b/cryptopy-1.2.5/crypto/cipher/icedoll_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/icedoll_test.py	2003-02-11 21:31:59.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/icedoll_test.py	2014-06-26 06:27:42.221807691 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.icedoll_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/__init__.py b/cryptopy-1.2.5/crypto/cipher/__init__.py
+--- a/cryptopy-1.2.5/crypto/cipher/__init__.py	2003-02-11 21:28:52.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/__init__.py	2014-06-26 06:27:45.537807623 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher
+ 
+     cipher package of CryptoPy
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/rijndael.py b/cryptopy-1.2.5/crypto/cipher/rijndael.py
+--- a/cryptopy-1.2.5/crypto/cipher/rijndael.py	2003-02-11 20:49:50.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/rijndael.py	2014-06-26 06:27:49.783807537 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.rijndael
+ 
+     Rijndael encryption algorithm
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/rijndael_test.py b/cryptopy-1.2.5/crypto/cipher/rijndael_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/rijndael_test.py	2003-02-11 20:51:56.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/rijndael_test.py	2014-06-26 06:27:53.567807459 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.rijndael_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py b/cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py
+--- a/cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py	2003-02-22 09:39:53.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py	2014-06-26 06:27:56.912807391 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.test_all_ciphers
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/tkip_encr.py b/cryptopy-1.2.5/crypto/cipher/tkip_encr.py
+--- a/cryptopy-1.2.5/crypto/cipher/tkip_encr.py	2003-02-17 23:37:14.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/tkip_encr.py	2014-06-26 06:28:04.671807233 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.tkip_encr
+ 
+     TKIP encryption from IEEE 802.11 TGi
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py b/cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py	2003-02-14 02:31:58.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py	2014-06-26 06:28:08.578807153 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.tkip_encr_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py b/cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py	2003-02-14 14:06:44.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py	2014-06-26 06:28:11.732807089 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.tkip_fake_crc_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/trolldoll.py b/cryptopy-1.2.5/crypto/cipher/trolldoll.py
+--- a/cryptopy-1.2.5/crypto/cipher/trolldoll.py	2003-02-28 20:50:07.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/trolldoll.py	2014-06-26 06:28:15.505807012 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.trolldoll
+ 
+     Modification to Icedoll to take advantage of the better error extension
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/wep.py b/cryptopy-1.2.5/crypto/cipher/wep.py
+--- a/cryptopy-1.2.5/crypto/cipher/wep.py	2003-02-11 21:02:17.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/wep.py	2014-06-26 06:28:20.747806905 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.cipher.wep
+ 
+     The WEP encryption algorithm used in IEEE 802.11
+diff -r -u a/cryptopy-1.2.5/crypto/cipher/wep_test.py b/cryptopy-1.2.5/crypto/cipher/wep_test.py
+--- a/cryptopy-1.2.5/crypto/cipher/wep_test.py	2003-02-11 21:03:17.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/cipher/wep_test.py	2014-06-26 06:28:24.233806834 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.wep_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/common.py b/cryptopy-1.2.5/crypto/common.py
+--- a/cryptopy-1.2.5/crypto/common.py	2003-02-11 20:15:22.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/common.py	2014-06-26 06:25:16.488810665 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.common
+     Common utility routines for crypto modules
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/entropy/__init__.py b/cryptopy-1.2.5/crypto/entropy/__init__.py
+--- a/cryptopy-1.2.5/crypto/entropy/__init__.py	2003-02-22 10:21:20.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/entropy/__init__.py	2014-06-26 06:28:27.396806769 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.entropy
+ 
+     Entropy package of CryptoPy
+diff -r -u a/cryptopy-1.2.5/crypto/entropy/pagingEntropy.py b/cryptopy-1.2.5/crypto/entropy/pagingEntropy.py
+--- a/cryptopy-1.2.5/crypto/entropy/pagingEntropy.py	2003-02-22 10:24:03.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/entropy/pagingEntropy.py	2014-06-26 06:28:31.582806684 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.entropy.pagingEntropy
+ 
+     Uses variations in disk access time to generator entropy.  A long string is
+diff -r -u a/cryptopy-1.2.5/crypto/entropy/prn_rijndael.py b/cryptopy-1.2.5/crypto/entropy/prn_rijndael.py
+--- a/cryptopy-1.2.5/crypto/entropy/prn_rijndael.py	2003-02-28 17:21:53.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/entropy/prn_rijndael.py	2014-06-26 06:28:34.915806616 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.entropy.prn_rijndael
+ 
+     A Psudeo Random Number Generator based on Rijndael_256k_256b
+diff -r -u a/cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py b/cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py
+--- a/cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py	2003-02-22 11:08:43.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py	2014-06-26 06:28:37.730806558 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.entropy.prn_rijndael_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/errors.py b/cryptopy-1.2.5/crypto/errors.py
+--- a/cryptopy-1.2.5/crypto/errors.py	2003-02-11 20:22:12.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/errors.py	2014-06-26 06:25:30.467810380 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ errors
+     Error classes for cryptographic modules
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/hash/hash.py b/cryptopy-1.2.5/crypto/hash/hash.py
+--- a/cryptopy-1.2.5/crypto/hash/hash.py	2003-02-11 01:05:08.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/hash/hash.py	2014-06-26 06:28:40.609806500 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """   crypto.cipher.hash
+       Base class for cryptographic hash algorithms
+       An alternate interface (no 'new').
+diff -r -u a/cryptopy-1.2.5/crypto/hash/__init__.py b/cryptopy-1.2.5/crypto/hash/__init__.py
+--- a/cryptopy-1.2.5/crypto/hash/__init__.py	2002-07-29 19:15:10.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/hash/__init__.py	2014-06-26 06:28:43.908806432 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ The crypto.hash package.
+     Part of the CryptoPy framework.
+ """   
+diff -r -u a/cryptopy-1.2.5/crypto/hash/md5Hash.py b/cryptopy-1.2.5/crypto/hash/md5Hash.py
+--- a/cryptopy-1.2.5/crypto/hash/md5Hash.py	2002-10-21 20:38:55.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/hash/md5Hash.py	2014-06-26 06:28:46.665806376 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """   md5Hash.py
+       Wrapper for python md5 module to support crypo module standard interface
+ """
+diff -r -u a/cryptopy-1.2.5/crypto/hash/md5Hash_test.py b/cryptopy-1.2.5/crypto/hash/md5Hash_test.py
+--- a/cryptopy-1.2.5/crypto/hash/md5Hash_test.py	2002-05-16 19:09:09.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/hash/md5Hash_test.py	2014-06-26 06:28:50.159806305 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ md5Hash_test.py
+     Unit tests for md5Hash.py  (not the default python library!)
+diff -r -u a/cryptopy-1.2.5/crypto/hash/sha1Hash.py b/cryptopy-1.2.5/crypto/hash/sha1Hash.py
+--- a/cryptopy-1.2.5/crypto/hash/sha1Hash.py	2003-02-22 00:36:37.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/hash/sha1Hash.py	2014-06-26 06:28:54.078806225 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.hash.sha1Hash
+ 
+     Wrapper for python sha module to support crypo module standard interface
+diff -r -u a/cryptopy-1.2.5/crypto/hash/sha1Hash_test.py b/cryptopy-1.2.5/crypto/hash/sha1Hash_test.py
+--- a/cryptopy-1.2.5/crypto/hash/sha1Hash_test.py	2002-05-16 19:21:32.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/hash/sha1Hash_test.py	2014-06-26 06:28:57.626806152 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ sha1Hash_test.py
+     Unit tests for sha1.py
+diff -r -u a/cryptopy-1.2.5/crypto/icedoll_test.py b/cryptopy-1.2.5/crypto/icedoll_test.py
+--- a/cryptopy-1.2.5/crypto/icedoll_test.py	2003-02-22 19:36:20.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/icedoll_test.py	2014-06-26 06:25:46.894810044 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.cipher.icedoll_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/__init__.py b/cryptopy-1.2.5/crypto/__init__.py
+--- a/cryptopy-1.2.5/crypto/__init__.py	2003-02-11 20:14:59.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/__init__.py	2014-06-26 06:25:57.411809830 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto
+     CryptoPy - pure python cryptographic libraries
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/hmacHash.py b/cryptopy-1.2.5/crypto/keyedHash/hmacHash.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/hmacHash.py	2002-10-21 20:59:08.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/keyedHash/hmacHash.py	2014-06-26 06:29:00.670806090 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """  hmacHash.py
+ 
+     Implemention of Request for Comments: 2104
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py b/cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py	2002-10-23 22:37:49.000000000 -0400
++++ b/cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py	2014-06-26 06:29:04.051806021 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ hmacHash_test.py
+     Unit tests for hmacHash.py
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/__init__.py b/cryptopy-1.2.5/crypto/keyedHash/__init__.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/__init__.py	2003-02-22 00:19:05.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/__init__.py	2014-06-26 06:29:08.024805940 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.keyedHash
+ 
+     The keyedHash package.
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/michael.py b/cryptopy-1.2.5/crypto/keyedHash/michael.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/michael.py	2003-02-22 00:25:24.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/michael.py	2014-06-26 06:29:11.708805865 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.keyedHash.michael
+ 
+     A reference implementation of the Michael Message Integrety Chek (MIC)
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/michael_test.py b/cryptopy-1.2.5/crypto/keyedHash/michael_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/michael_test.py	2003-02-22 00:26:30.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/michael_test.py	2014-06-26 06:29:16.148805774 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ crypto.keyedHash.michael_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py b/cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py	2003-02-22 00:30:07.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py	2014-06-26 06:29:19.431805707 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.keyedHash.pbkdf2
+ 
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py b/cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py	2003-02-22 00:31:10.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py	2014-06-26 06:29:22.636805642 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ crypto.keyedHash.pbkdf2_test
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py b/cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py	2002-12-13 18:58:54.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py	2014-06-26 06:29:25.959805574 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """  prf_dot11.py
+ 
+ The PRF function is used in a number of places in 802.11i
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py b/cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py	2002-12-13 18:58:18.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py	2014-06-26 06:29:28.770805517 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """  crypto.keyedHash.prf_dot11_test
+ 	 Tests of the IEEE 802.11 PRF functions
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py b/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py	2003-02-17 23:32:22.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py	2014-06-26 06:29:32.413805442 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.keyedHash.tkip_key_mixing.py
+     TKIP Temporal Key Mixing Function reference implementation
+ 
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py b/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py	2003-02-14 02:07:23.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py	2014-06-26 06:29:35.726805375 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.keyedHash.tkip_key_mixing
+     Tests for TKIP key mixing function
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py b/cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py	2002-12-13 02:42:55.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py	2014-06-26 06:29:38.555805317 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.keyedHash.tkip_mic
+ 
+     A reference implementation of the TKIP Message Integrety Chek (MIC)
+diff -r -u a/cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py b/cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py
+--- a/cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py	2002-12-16 21:02:24.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py	2014-06-26 06:29:42.014805247 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ Testing of TKIP_MIC Class
+ """
+diff -r -u a/cryptopy-1.2.5/crypto/passwords/__init__.py b/cryptopy-1.2.5/crypto/passwords/__init__.py
+--- a/cryptopy-1.2.5/crypto/passwords/__init__.py	2003-02-22 11:21:10.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/passwords/__init__.py	2014-06-26 06:29:45.045805185 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ CryptoPy - a pure python cryptographic libraries
+ 
+     crypto.passwords package
+diff -r -u a/cryptopy-1.2.5/crypto/passwords/passwordfactory.py b/cryptopy-1.2.5/crypto/passwords/passwordfactory.py
+--- a/cryptopy-1.2.5/crypto/passwords/passwordfactory.py	2003-02-22 11:20:04.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/passwords/passwordfactory.py	2014-06-26 06:29:48.532805114 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ crypto.passwords.passwordfactory
+ 
+     Python classes to create and recover passwords.  Currently contains
+diff -r -u a/cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py b/cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py
+--- a/cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py	2003-02-22 11:20:24.000000000 -0500
++++ b/cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py	2014-06-26 06:29:52.308805036 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ crypto.passwords.passwordfactory_test
+ 
+diff -r -u a/cryptopy-1.2.5/fmath/__init__.py b/cryptopy-1.2.5/fmath/__init__.py
+--- a/cryptopy-1.2.5/fmath/__init__.py	2003-02-21 22:26:23.000000000 -0500
++++ b/cryptopy-1.2.5/fmath/__init__.py	2014-06-26 06:30:25.412804361 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ fmath module
+ 
+     Copyright © (c) 2002 by Paul A. Lambert
+diff -r -u a/cryptopy-1.2.5/fmath/prime.py b/cryptopy-1.2.5/fmath/prime.py
+--- a/cryptopy-1.2.5/fmath/prime.py	2003-03-02 22:19:28.000000000 -0500
++++ b/cryptopy-1.2.5/fmath/prime.py	2014-06-26 06:30:29.574804276 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ fmath.prime
+ 
+     Start of prime number routines. Rabin-miller test works, more to come later.
+diff -r -u a/cryptopy-1.2.5/fmath/primes_to_5k.py b/cryptopy-1.2.5/fmath/primes_to_5k.py
+--- a/cryptopy-1.2.5/fmath/primes_to_5k.py	2003-03-02 22:16:09.000000000 -0500
++++ b/cryptopy-1.2.5/fmath/primes_to_5k.py	2014-06-26 06:30:32.583804215 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ fmath.primes_to_5k
+ 
+     All of the prime numbers below 5000
+diff -r -u a/cryptopy-1.2.5/fmath/prime_test.py b/cryptopy-1.2.5/fmath/prime_test.py
+--- a/cryptopy-1.2.5/fmath/prime_test.py	2003-03-02 23:05:40.000000000 -0500
++++ b/cryptopy-1.2.5/fmath/prime_test.py	2014-06-26 06:30:37.031804124 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #! /usr/bin/env python
+ """ fmath.prime_test
+ 
+diff -r -u a/cryptopy-1.2.5/__init__.py b/cryptopy-1.2.5/__init__.py
+--- a/cryptopy-1.2.5/__init__.py	2003-02-21 23:02:19.000000000 -0500
++++ b/cryptopy-1.2.5/__init__.py	2014-06-26 06:24:21.653811784 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ """ cryptopy
+     CryptoPy - pure python cryptographic libraries
+ 
+diff -r -u a/cryptopy-1.2.5/setup.py b/cryptopy-1.2.5/setup.py
+--- a/cryptopy-1.2.5/setup.py	2003-03-02 23:31:42.000000000 -0500
++++ b/cryptopy-1.2.5/setup.py	2014-06-26 06:24:05.681812110 -0400
+@@ -1,3 +1,4 @@
++# coding: utf-8
+ #!/usr/bin/env python
+ """ cryptopy setup
+ 
