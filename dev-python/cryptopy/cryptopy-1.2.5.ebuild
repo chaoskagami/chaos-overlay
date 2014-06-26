@@ -14,15 +14,11 @@ KEYWORDS="~x86 ~amd64"
 PYTHON_COMPAT=( python2_7 )
 DEPEND=""
 
-inherit distutils-r1
+inherit eutils distutils-r1
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
+S="${WORKDIR}/${P}"
 
 src_prepare() {
-	echo "IS THIS CALLED?"
 	epatch "${FILESDIR}"/${P}-unicode.patch
 }
 
