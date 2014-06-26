@@ -12,6 +12,12 @@ LICENSE="CRYPTOPY"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-unicode.patch"
+}
+
 src_compile() {
 	distutils_src_compile
 }
