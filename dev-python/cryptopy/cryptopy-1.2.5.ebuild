@@ -17,6 +17,7 @@ inherit eutils distutils-r1
 
 S="${WORKDIR}/${P}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-unicode.patch
+src_compile() {
+	epatch "${FILESDIR}"/${P}-unicode.patch	
+	python_compile
 }
