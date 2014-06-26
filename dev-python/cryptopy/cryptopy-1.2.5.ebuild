@@ -22,8 +22,8 @@ src_unpack() {
 }
 
 src_prepare() {
+	echo "IS THIS CALLED?"
 	epatch "${FILESDIR}"/${P}-unicode.patch
-
 }
 
 src_compile() {
