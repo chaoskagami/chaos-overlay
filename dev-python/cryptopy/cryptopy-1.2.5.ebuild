@@ -1,6 +1,10 @@
-EAPI=5
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
-DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained, but still used in some crap. Use only for compatibility, please."
+EAPI="5"
+
+DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained."
 HOMEPAGE="http://cryptopy.sourceforge.net"
 SRC_URI="mirror://sourceforge/cryptopy/cryptopy/${P}/${P}.tar.gz"
 PATCHES=( "${FILESDIR}"/${P}-unicode.patch )

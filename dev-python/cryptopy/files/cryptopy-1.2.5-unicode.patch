@@ -1,4 +1,3 @@
-diff -u -r cryptopy-1.2.5/binascii_plus.py cryptopy-1.2.5/binascii_plus.py
 --- cryptopy-1.2.5/binascii_plus.py
 +++ cryptopy-1.2.5/binascii_plus.py
 @@ -1,3 +1,4 @@
@@ -6,7 +5,6 @@ diff -u -r cryptopy-1.2.5/binascii_plus.py cryptopy-1.2.5/binascii_plus.py
  """ binascii_plus
  
      Enhanced hex packet input and display
-diff -u -r cryptopy-1.2.5/crypto/app/filecrypt.py cryptopy-1.2.5/crypto/app/filecrypt.py
 --- cryptopy-1.2.5/crypto/app/filecrypt.py
 +++ cryptopy-1.2.5/crypto/app/filecrypt.py
 @@ -1,3 +1,4 @@
@@ -14,7 +12,6 @@ diff -u -r cryptopy-1.2.5/crypto/app/filecrypt.py cryptopy-1.2.5/crypto/app/file
  #!/usr/bin/env python
  """ cipher.app.filecrypt
  
-diff -u -r cryptopy-1.2.5/crypto/app/__init__.py cryptopy-1.2.5/crypto/app/__init__.py
 --- cryptopy-1.2.5/crypto/app/__init__.py
 +++ cryptopy-1.2.5/crypto/app/__init__.py
 @@ -1,3 +1,4 @@
@@ -22,7 +19,6 @@ diff -u -r cryptopy-1.2.5/crypto/app/__init__.py cryptopy-1.2.5/crypto/app/__ini
  """ crypto.app
  
      Sample applications of CryptoPy
-diff -u -r cryptopy-1.2.5/crypto/cipher/aes_cbc.py cryptopy-1.2.5/crypto/cipher/aes_cbc.py
 --- cryptopy-1.2.5/crypto/cipher/aes_cbc.py
 +++ cryptopy-1.2.5/crypto/cipher/aes_cbc.py
 @@ -1,3 +1,4 @@
@@ -30,7 +26,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/aes_cbc.py cryptopy-1.2.5/crypto/cipher/
  """ crypto.cipher.aes_cbc
  
      AES_CBC Encryption Algorithm
-diff -u -r cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py
 --- cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py
 +++ cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py
 @@ -1,3 +1,4 @@
@@ -38,7 +33,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/aes_cbc_test.py cryptopy-1.2.5/crypto/ci
  #! /usr/bin/env python
  """ crypto.cipher.cbc_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/aes.py cryptopy-1.2.5/crypto/cipher/aes.py
 --- cryptopy-1.2.5/crypto/cipher/aes.py
 +++ cryptopy-1.2.5/crypto/cipher/aes.py
 @@ -1,3 +1,4 @@
@@ -46,7 +40,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/aes.py cryptopy-1.2.5/crypto/cipher/aes.
  """ crypto.aes
  
      AES Encryption Algorithm
-diff -u -r cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py
 --- cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py
 +++ cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py
 @@ -1,3 +1,4 @@
@@ -54,7 +47,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/aes_sbox_analysis.py cryptopy-1.2.5/cryp
  #! /usr/bin/env python
  """ crypto.cipher.aes_sbox_analysis
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/aes_test.py cryptopy-1.2.5/crypto/cipher/aes_test.py
 --- cryptopy-1.2.5/crypto/cipher/aes_test.py
 +++ cryptopy-1.2.5/crypto/cipher/aes_test.py
 @@ -1,3 +1,4 @@
@@ -62,7 +54,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/aes_test.py cryptopy-1.2.5/crypto/cipher
  #! /usr/bin/env python
  """ crypto.cipher.aes_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/arc4.py cryptopy-1.2.5/crypto/cipher/arc4.py
 --- cryptopy-1.2.5/crypto/cipher/arc4.py
 +++ cryptopy-1.2.5/crypto/cipher/arc4.py
 @@ -1,3 +1,4 @@
@@ -70,7 +61,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/arc4.py cryptopy-1.2.5/crypto/cipher/arc
  """ crypto.cipher.arc4
  
      A Stream Cipher Encryption Algorithm 'Arcfour'
-diff -u -r cryptopy-1.2.5/crypto/cipher/arc4_test.py cryptopy-1.2.5/crypto/cipher/arc4_test.py
 --- cryptopy-1.2.5/crypto/cipher/arc4_test.py
 +++ cryptopy-1.2.5/crypto/cipher/arc4_test.py
 @@ -1,3 +1,4 @@
@@ -78,7 +68,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/arc4_test.py cryptopy-1.2.5/crypto/ciphe
  #! /usr/bin/env python
  """ crypto.cipher.arc4_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/base.py cryptopy-1.2.5/crypto/cipher/base.py
 --- cryptopy-1.2.5/crypto/cipher/base.py
 +++ cryptopy-1.2.5/crypto/cipher/base.py
 @@ -1,3 +1,4 @@
@@ -86,7 +75,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/base.py cryptopy-1.2.5/crypto/cipher/bas
  """ crypto.cipher.base
  
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/cbc.py cryptopy-1.2.5/crypto/cipher/cbc.py
 --- cryptopy-1.2.5/crypto/cipher/cbc.py
 +++ cryptopy-1.2.5/crypto/cipher/cbc.py
 @@ -1,3 +1,4 @@
@@ -94,7 +82,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/cbc.py cryptopy-1.2.5/crypto/cipher/cbc.
  """ crypto.cipher.cbc
  
      CBC mode of encryption for block ciphers.
-diff -u -r cryptopy-1.2.5/crypto/cipher/cbc_test.py cryptopy-1.2.5/crypto/cipher/cbc_test.py
 --- cryptopy-1.2.5/crypto/cipher/cbc_test.py
 +++ cryptopy-1.2.5/crypto/cipher/cbc_test.py
 @@ -1,3 +1,4 @@
@@ -102,7 +89,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/cbc_test.py cryptopy-1.2.5/crypto/cipher
  #! /usr/bin/env python
  """ crypto.cipher.cbc_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/ccm.py cryptopy-1.2.5/crypto/cipher/ccm.py
 --- cryptopy-1.2.5/crypto/cipher/ccm.py
 +++ cryptopy-1.2.5/crypto/cipher/ccm.py
 @@ -1,3 +1,4 @@
@@ -110,7 +96,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/ccm.py cryptopy-1.2.5/crypto/cipher/ccm.
  """ crypto.cipher.ccm
  
      CCM block cipher mode
-diff -u -r cryptopy-1.2.5/crypto/cipher/ccm_test.py cryptopy-1.2.5/crypto/cipher/ccm_test.py
 --- cryptopy-1.2.5/crypto/cipher/ccm_test.py
 +++ cryptopy-1.2.5/crypto/cipher/ccm_test.py
 @@ -1,3 +1,4 @@
@@ -118,7 +103,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/ccm_test.py cryptopy-1.2.5/crypto/cipher
  #! /usr/bin/env python
  """ crypto.cipher.ccm_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/icedoll.py cryptopy-1.2.5/crypto/cipher/icedoll.py
 --- cryptopy-1.2.5/crypto/cipher/icedoll.py
 +++ cryptopy-1.2.5/crypto/cipher/icedoll.py
 @@ -1,3 +1,4 @@
@@ -126,7 +110,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/icedoll.py cryptopy-1.2.5/crypto/cipher/
  """ crypto.cipher.icedoll
  
      Modification of Rijndael to provide infinite error extension.
-diff -u -r cryptopy-1.2.5/crypto/cipher/icedoll_test.py cryptopy-1.2.5/crypto/cipher/icedoll_test.py
 --- cryptopy-1.2.5/crypto/cipher/icedoll_test.py
 +++ cryptopy-1.2.5/crypto/cipher/icedoll_test.py
 @@ -1,3 +1,4 @@
@@ -134,7 +117,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/icedoll_test.py cryptopy-1.2.5/crypto/ci
  #! /usr/bin/env python
  """ crypto.cipher.icedoll_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/__init__.py cryptopy-1.2.5/crypto/cipher/__init__.py
 --- cryptopy-1.2.5/crypto/cipher/__init__.py
 +++ cryptopy-1.2.5/crypto/cipher/__init__.py
 @@ -1,3 +1,4 @@
@@ -142,7 +124,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/__init__.py cryptopy-1.2.5/crypto/cipher
  """ crypto.cipher
  
      cipher package of CryptoPy
-diff -u -r cryptopy-1.2.5/crypto/cipher/rijndael.py cryptopy-1.2.5/crypto/cipher/rijndael.py
 --- cryptopy-1.2.5/crypto/cipher/rijndael.py
 +++ cryptopy-1.2.5/crypto/cipher/rijndael.py
 @@ -1,3 +1,4 @@
@@ -150,7 +131,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/rijndael.py cryptopy-1.2.5/crypto/cipher
  """ crypto.cipher.rijndael
  
      Rijndael encryption algorithm
-diff -u -r cryptopy-1.2.5/crypto/cipher/rijndael_test.py cryptopy-1.2.5/crypto/cipher/rijndael_test.py
 --- cryptopy-1.2.5/crypto/cipher/rijndael_test.py
 +++ cryptopy-1.2.5/crypto/cipher/rijndael_test.py
 @@ -1,3 +1,4 @@
@@ -158,7 +138,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/rijndael_test.py cryptopy-1.2.5/crypto/c
  #! /usr/bin/env python
  """ crypto.cipher.rijndael_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py
 --- cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py
 +++ cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py
 @@ -1,3 +1,4 @@
@@ -166,7 +145,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/test_all_ciphers.py cryptopy-1.2.5/crypt
  #! /usr/bin/env python
  """ crypto.cipher.test_all_ciphers
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_encr.py cryptopy-1.2.5/crypto/cipher/tkip_encr.py
 --- cryptopy-1.2.5/crypto/cipher/tkip_encr.py
 +++ cryptopy-1.2.5/crypto/cipher/tkip_encr.py
 @@ -1,3 +1,4 @@
@@ -174,7 +152,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_encr.py cryptopy-1.2.5/crypto/ciphe
  """ crypto.cipher.tkip_encr
  
      TKIP encryption from IEEE 802.11 TGi
-diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py
 --- cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py
 +++ cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py
 @@ -1,3 +1,4 @@
@@ -182,7 +159,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_encr_test.py cryptopy-1.2.5/crypto/
  #! /usr/bin/env python
  """ crypto.cipher.tkip_encr_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py
 --- cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py
 +++ cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py
 @@ -1,3 +1,4 @@
@@ -190,7 +166,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/tkip_fake_crc_test.py cryptopy-1.2.5/cry
  #! /usr/bin/env python
  """ crypto.cipher.tkip_fake_crc_test
  
-diff -u -r cryptopy-1.2.5/crypto/cipher/trolldoll.py cryptopy-1.2.5/crypto/cipher/trolldoll.py
 --- cryptopy-1.2.5/crypto/cipher/trolldoll.py
 +++ cryptopy-1.2.5/crypto/cipher/trolldoll.py
 @@ -1,3 +1,4 @@
@@ -198,7 +173,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/trolldoll.py cryptopy-1.2.5/crypto/ciphe
  """ crypto.cipher.trolldoll
  
      Modification to Icedoll to take advantage of the better error extension
-diff -u -r cryptopy-1.2.5/crypto/cipher/wep.py cryptopy-1.2.5/crypto/cipher/wep.py
 --- cryptopy-1.2.5/crypto/cipher/wep.py
 +++ cryptopy-1.2.5/crypto/cipher/wep.py
 @@ -1,3 +1,4 @@
@@ -206,7 +180,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/wep.py cryptopy-1.2.5/crypto/cipher/wep.
  """ crypto.cipher.wep
  
      The WEP encryption algorithm used in IEEE 802.11
-diff -u -r cryptopy-1.2.5/crypto/cipher/wep_test.py cryptopy-1.2.5/crypto/cipher/wep_test.py
 --- cryptopy-1.2.5/crypto/cipher/wep_test.py
 +++ cryptopy-1.2.5/crypto/cipher/wep_test.py
 @@ -1,3 +1,4 @@
@@ -214,7 +187,6 @@ diff -u -r cryptopy-1.2.5/crypto/cipher/wep_test.py cryptopy-1.2.5/crypto/cipher
  #! /usr/bin/env python
  """ crypto.cipher.wep_test
  
-diff -u -r cryptopy-1.2.5/crypto/common.py cryptopy-1.2.5/crypto/common.py
 --- cryptopy-1.2.5/crypto/common.py
 +++ cryptopy-1.2.5/crypto/common.py
 @@ -1,3 +1,4 @@
@@ -222,7 +194,6 @@ diff -u -r cryptopy-1.2.5/crypto/common.py cryptopy-1.2.5/crypto/common.py
  """ crypto.common
      Common utility routines for crypto modules
  
-diff -u -r cryptopy-1.2.5/crypto/entropy/__init__.py cryptopy-1.2.5/crypto/entropy/__init__.py
 --- cryptopy-1.2.5/crypto/entropy/__init__.py
 +++ cryptopy-1.2.5/crypto/entropy/__init__.py
 @@ -1,3 +1,4 @@
@@ -230,7 +201,6 @@ diff -u -r cryptopy-1.2.5/crypto/entropy/__init__.py cryptopy-1.2.5/crypto/entro
  """ crypto.entropy
  
      Entropy package of CryptoPy
-diff -u -r cryptopy-1.2.5/crypto/entropy/pagingEntropy.py cryptopy-1.2.5/crypto/entropy/pagingEntropy.py
 --- cryptopy-1.2.5/crypto/entropy/pagingEntropy.py
 +++ cryptopy-1.2.5/crypto/entropy/pagingEntropy.py
 @@ -1,3 +1,4 @@
@@ -238,7 +208,6 @@ diff -u -r cryptopy-1.2.5/crypto/entropy/pagingEntropy.py cryptopy-1.2.5/crypto/
  """ crypto.entropy.pagingEntropy
  
      Uses variations in disk access time to generator entropy.  A long string is
-diff -u -r cryptopy-1.2.5/crypto/entropy/prn_rijndael.py cryptopy-1.2.5/crypto/entropy/prn_rijndael.py
 --- cryptopy-1.2.5/crypto/entropy/prn_rijndael.py
 +++ cryptopy-1.2.5/crypto/entropy/prn_rijndael.py
 @@ -1,3 +1,4 @@
@@ -246,7 +215,6 @@ diff -u -r cryptopy-1.2.5/crypto/entropy/prn_rijndael.py cryptopy-1.2.5/crypto/e
  """ crypto.entropy.prn_rijndael
  
      A Psudeo Random Number Generator based on Rijndael_256k_256b
-diff -u -r cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py
 --- cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py
 +++ cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py
 @@ -1,3 +1,4 @@
@@ -254,7 +222,6 @@ diff -u -r cryptopy-1.2.5/crypto/entropy/prn_rijndael_test.py cryptopy-1.2.5/cry
  #! /usr/bin/env python
  """ crypto.entropy.prn_rijndael_test
  
-diff -u -r cryptopy-1.2.5/crypto/errors.py cryptopy-1.2.5/crypto/errors.py
 --- cryptopy-1.2.5/crypto/errors.py
 +++ cryptopy-1.2.5/crypto/errors.py
 @@ -1,3 +1,4 @@
@@ -262,7 +229,6 @@ diff -u -r cryptopy-1.2.5/crypto/errors.py cryptopy-1.2.5/crypto/errors.py
  """ errors
      Error classes for cryptographic modules
  
-diff -u -r cryptopy-1.2.5/crypto/hash/hash.py cryptopy-1.2.5/crypto/hash/hash.py
 --- cryptopy-1.2.5/crypto/hash/hash.py
 +++ cryptopy-1.2.5/crypto/hash/hash.py
 @@ -1,3 +1,4 @@
@@ -270,7 +236,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/hash.py cryptopy-1.2.5/crypto/hash/hash.py
  """   crypto.cipher.hash
        Base class for cryptographic hash algorithms
        An alternate interface (no 'new').
-diff -u -r cryptopy-1.2.5/crypto/hash/__init__.py cryptopy-1.2.5/crypto/hash/__init__.py
 --- cryptopy-1.2.5/crypto/hash/__init__.py
 +++ cryptopy-1.2.5/crypto/hash/__init__.py
 @@ -1,3 +1,4 @@
@@ -278,7 +243,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/__init__.py cryptopy-1.2.5/crypto/hash/__i
  """ The crypto.hash package.
      Part of the CryptoPy framework.
  """   
-diff -u -r cryptopy-1.2.5/crypto/hash/md5Hash.py cryptopy-1.2.5/crypto/hash/md5Hash.py
 --- cryptopy-1.2.5/crypto/hash/md5Hash.py
 +++ cryptopy-1.2.5/crypto/hash/md5Hash.py
 @@ -1,3 +1,4 @@
@@ -286,7 +250,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/md5Hash.py cryptopy-1.2.5/crypto/hash/md5H
  """   md5Hash.py
        Wrapper for python md5 module to support crypo module standard interface
  """
-diff -u -r cryptopy-1.2.5/crypto/hash/md5Hash_test.py cryptopy-1.2.5/crypto/hash/md5Hash_test.py
 --- cryptopy-1.2.5/crypto/hash/md5Hash_test.py
 +++ cryptopy-1.2.5/crypto/hash/md5Hash_test.py
 @@ -1,3 +1,4 @@
@@ -294,7 +257,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/md5Hash_test.py cryptopy-1.2.5/crypto/hash
  #!/usr/bin/env python
  """ md5Hash_test.py
      Unit tests for md5Hash.py  (not the default python library!)
-diff -u -r cryptopy-1.2.5/crypto/hash/sha1Hash.py cryptopy-1.2.5/crypto/hash/sha1Hash.py
 --- cryptopy-1.2.5/crypto/hash/sha1Hash.py
 +++ cryptopy-1.2.5/crypto/hash/sha1Hash.py
 @@ -1,3 +1,4 @@
@@ -302,7 +264,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/sha1Hash.py cryptopy-1.2.5/crypto/hash/sha
  """ crypto.hash.sha1Hash
  
      Wrapper for python sha module to support crypo module standard interface
-diff -u -r cryptopy-1.2.5/crypto/hash/sha1Hash_test.py cryptopy-1.2.5/crypto/hash/sha1Hash_test.py
 --- cryptopy-1.2.5/crypto/hash/sha1Hash_test.py
 +++ cryptopy-1.2.5/crypto/hash/sha1Hash_test.py
 @@ -1,3 +1,4 @@
@@ -310,7 +271,6 @@ diff -u -r cryptopy-1.2.5/crypto/hash/sha1Hash_test.py cryptopy-1.2.5/crypto/has
  #!/usr/bin/env python
  """ sha1Hash_test.py
      Unit tests for sha1.py
-diff -u -r cryptopy-1.2.5/crypto/icedoll_test.py cryptopy-1.2.5/crypto/icedoll_test.py
 --- cryptopy-1.2.5/crypto/icedoll_test.py
 +++ cryptopy-1.2.5/crypto/icedoll_test.py
 @@ -1,3 +1,4 @@
@@ -318,7 +278,6 @@ diff -u -r cryptopy-1.2.5/crypto/icedoll_test.py cryptopy-1.2.5/crypto/icedoll_t
  #! /usr/bin/env python
  """ crypto.cipher.icedoll_test
  
-diff -u -r cryptopy-1.2.5/crypto/__init__.py cryptopy-1.2.5/crypto/__init__.py
 --- cryptopy-1.2.5/crypto/__init__.py
 +++ cryptopy-1.2.5/crypto/__init__.py
 @@ -1,3 +1,4 @@
@@ -326,7 +285,6 @@ diff -u -r cryptopy-1.2.5/crypto/__init__.py cryptopy-1.2.5/crypto/__init__.py
  """ crypto
      CryptoPy - pure python cryptographic libraries
  
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/hmacHash.py cryptopy-1.2.5/crypto/keyedHash/hmacHash.py
 --- cryptopy-1.2.5/crypto/keyedHash/hmacHash.py
 +++ cryptopy-1.2.5/crypto/keyedHash/hmacHash.py
 @@ -1,3 +1,4 @@
@@ -334,7 +292,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/hmacHash.py cryptopy-1.2.5/crypto/key
  """  hmacHash.py
  
      Implemention of Request for Comments: 2104
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py
 @@ -1,3 +1,4 @@
@@ -342,7 +299,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/hmacHash_test.py cryptopy-1.2.5/crypt
  #!/usr/bin/env python
  """ hmacHash_test.py
      Unit tests for hmacHash.py
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/__init__.py cryptopy-1.2.5/crypto/keyedHash/__init__.py
 --- cryptopy-1.2.5/crypto/keyedHash/__init__.py
 +++ cryptopy-1.2.5/crypto/keyedHash/__init__.py
 @@ -1,3 +1,4 @@
@@ -350,7 +306,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/__init__.py cryptopy-1.2.5/crypto/key
  """ crypto.keyedHash
  
      The keyedHash package.
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/michael.py cryptopy-1.2.5/crypto/keyedHash/michael.py
 --- cryptopy-1.2.5/crypto/keyedHash/michael.py
 +++ cryptopy-1.2.5/crypto/keyedHash/michael.py
 @@ -1,3 +1,4 @@
@@ -358,7 +313,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/michael.py cryptopy-1.2.5/crypto/keye
  """ crypto.keyedHash.michael
  
      A reference implementation of the Michael Message Integrety Chek (MIC)
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/michael_test.py cryptopy-1.2.5/crypto/keyedHash/michael_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/michael_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/michael_test.py
 @@ -1,3 +1,4 @@
@@ -366,7 +320,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/michael_test.py cryptopy-1.2.5/crypto
  #!/usr/bin/env python
  """ crypto.keyedHash.michael_test
  
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py
 --- cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py
 +++ cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py
 @@ -1,3 +1,4 @@
@@ -374,7 +327,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2.py cryptopy-1.2.5/crypto/keyed
  """ crypto.keyedHash.pbkdf2
  
  
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py
 @@ -1,3 +1,4 @@
@@ -382,7 +334,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/pbkdf2_test.py cryptopy-1.2.5/crypto/
  #!/usr/bin/env python
  """ crypto.keyedHash.pbkdf2_test
  
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py
 --- cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py
 +++ cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py
 @@ -1,3 +1,4 @@
@@ -390,7 +341,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11.py cryptopy-1.2.5/crypto/ke
  """  prf_dot11.py
  
  The PRF function is used in a number of places in 802.11i
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py
 @@ -1,3 +1,4 @@
@@ -398,7 +348,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/prf_dot11_test.py cryptopy-1.2.5/cryp
  #!/usr/bin/env python
  """  crypto.keyedHash.prf_dot11_test
  	 Tests of the IEEE 802.11 PRF functions
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py
 --- cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py
 +++ cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py
 @@ -1,3 +1,4 @@
@@ -406,7 +355,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing.py cryptopy-1.2.5/cry
  """ crypto.keyedHash.tkip_key_mixing.py
      TKIP Temporal Key Mixing Function reference implementation
  
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py
 @@ -1,3 +1,4 @@
@@ -414,7 +362,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_key_mixing_test.py cryptopy-1.2.
  #! /usr/bin/env python
  """ crypto.keyedHash.tkip_key_mixing
      Tests for TKIP key mixing function
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py
 --- cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py
 +++ cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py
 @@ -1,3 +1,4 @@
@@ -422,7 +369,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic.py cryptopy-1.2.5/crypto/key
  """ crypto.keyedHash.tkip_mic
  
      A reference implementation of the TKIP Message Integrety Chek (MIC)
-diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py
 --- cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py
 +++ cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py
 @@ -1,3 +1,4 @@
@@ -430,7 +376,6 @@ diff -u -r cryptopy-1.2.5/crypto/keyedHash/tkip_mic_test.py cryptopy-1.2.5/crypt
  #!/usr/bin/env python
  """ Testing of TKIP_MIC Class
  """
-diff -u -r cryptopy-1.2.5/crypto/passwords/__init__.py cryptopy-1.2.5/crypto/passwords/__init__.py
 --- cryptopy-1.2.5/crypto/passwords/__init__.py
 +++ cryptopy-1.2.5/crypto/passwords/__init__.py
 @@ -1,3 +1,4 @@
@@ -438,7 +383,6 @@ diff -u -r cryptopy-1.2.5/crypto/passwords/__init__.py cryptopy-1.2.5/crypto/pas
  """ CryptoPy - a pure python cryptographic libraries
  
      crypto.passwords package
-diff -u -r cryptopy-1.2.5/crypto/passwords/passwordfactory.py cryptopy-1.2.5/crypto/passwords/passwordfactory.py
 --- cryptopy-1.2.5/crypto/passwords/passwordfactory.py
 +++ cryptopy-1.2.5/crypto/passwords/passwordfactory.py
 @@ -1,3 +1,4 @@
@@ -446,7 +390,6 @@ diff -u -r cryptopy-1.2.5/crypto/passwords/passwordfactory.py cryptopy-1.2.5/cry
  """ crypto.passwords.passwordfactory
  
      Python classes to create and recover passwords.  Currently contains
-diff -u -r cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py
 --- cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py
 +++ cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py
 @@ -1,3 +1,4 @@
@@ -454,7 +397,6 @@ diff -u -r cryptopy-1.2.5/crypto/passwords/passwordfactory_test.py cryptopy-1.2.
  #! /usr/bin/env python
  """ crypto.passwords.passwordfactory_test
  
-diff -u -r cryptopy-1.2.5/fmath/__init__.py cryptopy-1.2.5/fmath/__init__.py
 --- cryptopy-1.2.5/fmath/__init__.py
 +++ cryptopy-1.2.5/fmath/__init__.py
 @@ -1,3 +1,4 @@
@@ -462,7 +404,6 @@ diff -u -r cryptopy-1.2.5/fmath/__init__.py cryptopy-1.2.5/fmath/__init__.py
  """ fmath module
  
      Copyright © (c) 2002 by Paul A. Lambert
-diff -u -r cryptopy-1.2.5/fmath/prime.py cryptopy-1.2.5/fmath/prime.py
 --- cryptopy-1.2.5/fmath/prime.py
 +++ cryptopy-1.2.5/fmath/prime.py
 @@ -1,3 +1,4 @@
@@ -470,7 +411,6 @@ diff -u -r cryptopy-1.2.5/fmath/prime.py cryptopy-1.2.5/fmath/prime.py
  """ fmath.prime
  
      Start of prime number routines. Rabin-miller test works, more to come later.
-diff -u -r cryptopy-1.2.5/fmath/primes_to_5k.py cryptopy-1.2.5/fmath/primes_to_5k.py
 --- cryptopy-1.2.5/fmath/primes_to_5k.py
 +++ cryptopy-1.2.5/fmath/primes_to_5k.py
 @@ -1,3 +1,4 @@
@@ -478,7 +418,6 @@ diff -u -r cryptopy-1.2.5/fmath/primes_to_5k.py cryptopy-1.2.5/fmath/primes_to_5
  """ fmath.primes_to_5k
  
      All of the prime numbers below 5000
-diff -u -r cryptopy-1.2.5/fmath/prime_test.py cryptopy-1.2.5/fmath/prime_test.py
 --- cryptopy-1.2.5/fmath/prime_test.py
 +++ cryptopy-1.2.5/fmath/prime_test.py
 @@ -1,3 +1,4 @@
@@ -486,7 +425,6 @@ diff -u -r cryptopy-1.2.5/fmath/prime_test.py cryptopy-1.2.5/fmath/prime_test.py
  #! /usr/bin/env python
  """ fmath.prime_test
  
-diff -u -r cryptopy-1.2.5/__init__.py cryptopy-1.2.5/__init__.py
 --- cryptopy-1.2.5/__init__.py
 +++ cryptopy-1.2.5/__init__.py
 @@ -1,3 +1,4 @@
@@ -494,7 +432,6 @@ diff -u -r cryptopy-1.2.5/__init__.py cryptopy-1.2.5/__init__.py
  """ cryptopy
      CryptoPy - pure python cryptographic libraries
  
-diff -u -r cryptopy-1.2.5/setup.py cryptopy-1.2.5/setup.py
 --- cryptopy-1.2.5/setup.py
 +++ cryptopy-1.2.5/setup.py
 @@ -1,3 +1,4 @@
