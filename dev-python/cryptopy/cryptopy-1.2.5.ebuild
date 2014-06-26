@@ -13,11 +13,10 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils distutils-r1
+inherit eutils
 
-S="${WORKDIR}/${P}"
-
-src_compile() {
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-unicode.patch	
-	python_compile
 }
+
+inherit distutils-r1
