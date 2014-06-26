@@ -1,6 +1,6 @@
-EAPI=4
+EAPI=5
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="CryptoPy is a python crypto library that's old and 
 unmaintained, but still used in some crap. Use only for compatibility, 
@@ -15,6 +15,9 @@ KEYWORDS="~x86 ~amd64"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+}
+
+src_prepare() {
 	epatch "${FILESDIR}/${P}-unicode.patch"
 }
 
