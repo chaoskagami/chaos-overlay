@@ -15,8 +15,9 @@ LICENSE="CRYPTOPY"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
-src_prepare() {
-	distutils_src_prepare
-	epatch ${FILESDIR}/${P}-unicode.patch	
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-unicode.patch"
 }
 
