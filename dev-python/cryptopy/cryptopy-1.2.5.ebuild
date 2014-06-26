@@ -12,7 +12,6 @@ LICENSE="CRYPTOPY"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 PYTHON_COMPAT=( python2_7 )
-DEPEND=""
 
 inherit eutils distutils-r1
 
