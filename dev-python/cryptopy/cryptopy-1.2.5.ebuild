@@ -3,9 +3,7 @@ EAPI=5
 inherit distutils
 inherit eutils
 
-DESCRIPTION="CryptoPy is a python crypto library that's old and 
-unmaintained, but still used in some crap. Use only for compatibility, 
-please."
+DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained, but still used in some crap. Use only for compatibility, please."
 HOMEPAGE="http://cryptopy.sourceforge.net"
 SRC_URI="mirror://sourceforge/cryptopy/cryptopy/${P}/${P}.tar.gz"
 
@@ -13,16 +11,13 @@ LICENSE="CRYPTOPY"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
-
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 }
 
 src_prepare() {
-#	cd "${S}/${A}"
-	EPATCH_OPTS="-u -p0" epatch "${FILESDIR}/${P}-unicode.patch"
+	epatch -u -p1 "${FILESDIR}/${P}-unicode.patch"
 }
 
 src_compile() {
