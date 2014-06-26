@@ -7,7 +7,6 @@ EAPI="5"
 DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained."
 HOMEPAGE="http://cryptopy.sourceforge.net"
 SRC_URI="mirror://sourceforge/cryptopy/cryptopy/${P}/${P}.tar.gz"
-PATCHES=( "${FILESDIR}"/${P}-unicode.patch )
 
 LICENSE="CRYPTOPY"
 SLOT="0"
@@ -23,7 +22,8 @@ src_unpack() {
 }
 
 src_prepare() {
-	distutils-r1_python_prepare_all
+	epatch "${FILESDIR}"/${P}-unicode.patch
+
 }
 
 src_compile() {
