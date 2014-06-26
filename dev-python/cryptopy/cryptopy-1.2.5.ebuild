@@ -5,7 +5,7 @@
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 eutils
+inherit distutils eutils
 
 DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained."
 HOMEPAGE="http://cryptopy.sourceforge.net"
@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-unicode.patch	
+	distutils_src_prepare
+	epatch ${FILESDIR}/${P}-unicode.patch	
 }
 
