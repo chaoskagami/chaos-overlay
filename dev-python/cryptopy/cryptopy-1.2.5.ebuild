@@ -13,13 +13,16 @@ LICENSE="CRYPTOPY"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
+
+
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 }
 
 src_prepare() {
-	EPATCH_FORCE="yes" EPATCH_OPTS="-u -p1" epatch "${FILESDIR}/${P}-unicode.patch"
+#	cd "${S}/${A}"
+	EPATCH_OPTS="-u -p0" epatch "${FILESDIR}/${P}-unicode.patch"
 }
 
 src_compile() {
