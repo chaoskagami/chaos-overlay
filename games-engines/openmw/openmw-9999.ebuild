@@ -15,8 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cdinstall devtools +ffmpeg +launcher test"
 
-CXXFLAGS="$CXXFLAGS -D__STDC_CONSTANT_MACROS -Wno-error=unused-variable"
-
 # XXX static build
 RDEPEND=">=dev-games/mygui-3.2.0
 	>=dev-games/ogre-1.8.0[cg,freeimage,ois,opengl,zip]
@@ -65,6 +63,7 @@ src_configure() {
 		-DSYSCONFDIR="${GAMES_SYSCONFDIR}"/${PN}
 		-DUSE_AUDIERE=OFF
 		-DUSE_SYSTEM_TINYXML=ON
+		-D__STDC_CONSTANT_MACROS
 		$(cmake-utils_use_use ffmpeg FFMPEG)
 	)
 
