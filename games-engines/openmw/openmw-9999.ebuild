@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cdinstall devtools +ffmpeg +launcher test"
 
-CXXFLAGS="$CXXFLAGS -D__STDC_CONSTANT_MACROS"
+CXXFLAGS="$CXXFLAGS -D__STDC_CONSTANT_MACROS -Wno-error=unused-variable"
 
 # XXX static build
 RDEPEND=">=dev-games/mygui-3.2.0
