@@ -24,8 +24,8 @@ RDEPEND="${DEPEND}"
 PDEPEND="app-misc/ca-certificates"
 
 src_prepare() {
-	epatch $(FILESDIR)/libressl-cryptomainfix.patch
-	epatch $(FILESDIR)/libressl-fixRAND_egd.patch
+	epatch "${FILESDIR}/libressl-cryptomainfix.patch"
+	epatch "${FILESDIR}/libressl-fixRAND_egd.patch"
 
 	sed -i \
 		-e '/^CFLAGS=/s#-g##' \
