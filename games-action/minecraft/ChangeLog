@@ -2,6 +2,13 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*minecraft-1.2.2 (23 Jul 2014)
+  23 Jul 2014; Jon Feldman <chaos.kagami@gmail.com>
+  +minecraft-1.2.2.ebuild
+  -minecraft-1.2.1-r4.ebuild
+  Version bump to avoid conflict. Updated to use guava 15,
+  because forge requires it.
+
 *minecraft-1.2.1-r4 (09 Sep 2013)
 
   09 Sep 2013; James Le Cuirot <chewi@aura-online.co.uk>

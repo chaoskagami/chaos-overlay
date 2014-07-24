@@ -94,6 +94,8 @@ pkg_postinst() {
 	ewarn "reporting bugs to Gentoo, please state whether you are using upstream"
 	ewarn "libraries or not. Always use upstream libraries when reporting bugs"
 	ewarn "upstream."
+	ewarn ""
+	ewarn "This version has been fixed - Forge is installable if you like mods."
 	echo
 
 	games_pkg_postinst

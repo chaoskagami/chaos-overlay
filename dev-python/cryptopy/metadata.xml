@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>chaos</herd>
-	<use>
-		<flag name='asm'>Enable assembly for optimization</flag>
-	</use>
+	<maintainer>
+		<email>chaos.kagami@gmail.com</email>
+		<name>Jon Feldman</name>
+	</maintainer>
 </pkgmetadata>
+
