@@ -4,16 +4,17 @@
 
 EAPI=5
 
-inherit eutils gnome2-utils cmake-utils games git-r3
+inherit eutils gnome2-utils cmake-utils games
 
 DESCRIPTION="An open source reimplementation of TES III: Morrowind"
 HOMEPAGE="http://openmw.org/"
-EGIT_REPO_URI="git://github.com/OpenMW/openmw"
+SRC_URI="https://github.com/zinnschlag/openmw/archive/${P}.tar.gz"
 
 LICENSE="GPL-3 MIT BitstreamVera OFL-1.1"
 SLOT="0"
-KEYWORDS="**"
-IUSE="cdinstall devtools +ffmpeg +launcher test"
+KEYWORDS="~amd64 ~x86"
+IUSE="cdinstall devtools +ffmpeg +launcher mpg123 test"
+REQUIRED_USE="^^ ( mpg123 ffmpeg )"
 
 # XXX static build
 RDEPEND=">=dev-games/mygui-3.2.0
@@ -29,22 +30,20 @@ RDEPEND=">=dev-games/mygui-3.2.0
 	>=sci-physics/bullet-2.80
 	devtools? ( dev-qt/qtxmlpatterns:4 )
 	ffmpeg? ( virtual/ffmpeg )
-	launcher? ( app-arch/unshield )"
+	launcher? ( app-arch/unshield )
+	mpg123? ( media-libs/libsndfile
+		media-sound/mpg123 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? ( dev-cpp/gmock
 		dev-cpp/gtest )"
 PDEPEND="cdinstall? ( games-rpg/morrowind-data )"
 
-src_prepare() {
-	ewarn "Please note: openmw's git is in constant flux, and as such"
-	ewarn "this may fail during compile. If so, sit around and wait"
-	ewarn "for a commit to fix it, or install a stable version instead."
-	ewarn "I guarantee nothing, okay? - @chaoskagami"
+S=${WORKDIR}/${PN}-${P}
 
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.15.0-cfg.patch \
-		"${FILESDIR}"/${PN}-0.26.0-build.patch \
-		"${FILESDIR}"/${PN}-0.31.0-build.patch
+		"${FILESDIR}"/${PN}-0.26.0-build.patch
 
 	sed \
 		-e "s#globalPath(\"/etc/\")#globalPath(\"${GAMES_SYSCONFDIR}\")#" \
@@ -69,6 +68,7 @@ src_configure() {
 		-D__STDC_CONSTANT_MACROS=1
 		-DUSE_SYSTEM_TINYXML=ON
 		$(cmake-utils_use_use ffmpeg FFMPEG)
+		$(cmake-utils_use_use mpg123 MPG123)
 	)
 
 	cmake-utils_src_configure
@@ -96,6 +96,11 @@ pkg_preinst() {
 pkg_postinst() {
 	games_pkg_postinst
 	gnome2_icon_cache_update
+	if use mpg123 ; then
+		eerror "IMPORTANT NOTICE:"
+		elog "Useflag \"mpg123\" only supports sound, videos will be disabled!"
+		elog "In order to play videos enable \"ffmpeg\" useflag instead"
+	fi
 }
 
 pkg_postrm() {

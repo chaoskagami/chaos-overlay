@@ -4,15 +4,15 @@
 
 EAPI=5
 
-inherit eutils gnome2-utils cmake-utils games git-r3
+inherit eutils gnome2-utils cmake-utils games
 
 DESCRIPTION="An open source reimplementation of TES III: Morrowind"
 HOMEPAGE="http://openmw.org/"
-EGIT_REPO_URI="git://github.com/OpenMW/openmw"
+SRC_URI="https://github.com/OpenMW/openmw/archive/${P}.tar.gz"
 
 LICENSE="GPL-3 MIT BitstreamVera OFL-1.1"
 SLOT="0"
-KEYWORDS="**"
+KEYWORDS="~amd64 ~x86"
 IUSE="cdinstall devtools +ffmpeg +launcher test"
 
 # XXX static build
@@ -36,12 +36,9 @@ DEPEND="${RDEPEND}
 		dev-cpp/gtest )"
 PDEPEND="cdinstall? ( games-rpg/morrowind-data )"
 
-src_prepare() {
-	ewarn "Please note: openmw's git is in constant flux, and as such"
-	ewarn "this may fail during compile. If so, sit around and wait"
-	ewarn "for a commit to fix it, or install a stable version instead."
-	ewarn "I guarantee nothing, okay? - @chaoskagami"
+S=${WORKDIR}/${PN}-${P}
 
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.15.0-cfg.patch \
 		"${FILESDIR}"/${PN}-0.26.0-build.patch \
 		"${FILESDIR}"/${PN}-0.31.0-build.patch

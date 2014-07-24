@@ -1,0 +1,12 @@
+shared_ptr not included, fix
+
+--- libs/openengine/bullet/physic.hpp
++++ libs/openengine/bullet/physic.hpp
+@@ -8,6 +8,7 @@
+ #include <map>
+ #include "BulletShapeLoader.h"
+ #include "BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h"
++#include <boost/shared_ptr.hpp>
+ 
+ 
+ class btRigidBody;
