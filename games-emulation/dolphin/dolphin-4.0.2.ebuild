@@ -84,12 +84,12 @@ src_prepare() {
 
 	# Nukes SDL2 support in dolphin, forcing SDL1 instead.
 	if use nosdl2; then
-		sed -i -e '/^include(FindSDL2 OPTIONAL)/d' CMakeLists.txt || die
-		sed -i -e '/^if(SDL2_FOUND)/d' CMakeLists.txt || die
-		sed -i -e '/^message("Using shared SDL2")/d' CMakeLists.txt || die
-		sed -i -e '/^include_directories(${SDL2_INCLUDE_DIR})/d' CMakeLists.txt || die
-		sed -i -e '/^else(SDL2_FOUND)/d' CMakeLists.txt || die
-		sed -i -e '/^endif(SDL2_FOUND)/d' CMakeLists.txt || die
+		sed -i  '/include(FindSDL2 OPTIONAL)/d' CMakeLists.txt || die
+		sed -i  '/if(SDL2_FOUND)/d' CMakeLists.txt || die
+		sed -i  '/message("Using shared SDL2")/d' CMakeLists.txt || die
+		sed -i  '/include_directories(${SDL2_INCLUDE_DIR})/d' CMakeLists.txt || die
+		sed -i  '/else(SDL2_FOUND)/d' CMakeLists.txt || die
+		sed -i  '/endif(SDL2_FOUND)/d' CMakeLists.txt || die
 	fi
 
 	# Remove ALL the bundled libraries, aside from:
