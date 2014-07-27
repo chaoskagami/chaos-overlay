@@ -84,13 +84,12 @@ src_prepare() {
 
 	# Nukes SDL2 support in dolphin, forcing SDL1 instead.
 	if use nosdl2; then
-		sed -i -e 's/if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")/if(NOT ANDROID)/g' CMakeLists.txt || die
-		sed -i -e 's/include(FindSDL2 OPTIONAL)/message("SDL2 support nuked. Have a nice day.")/g' CMakeLists.txt || die
-		sed -i -e 's/if(SDL2_FOUND)//g' CMakeLists.txt || die
-		sed -i -e 's/message("Using shared SDL2")//g' CMakeLists.txt || die
-		sed -i -e 's/include_directories(${SDL2_INCLUDE_DIR})//g' CMakeLists.txt || die
-		sed -i -e 's/else(SDL2_FOUND)//g' CMakeLists.txt || die
-		sed -i -e 's/endif(SDL2_FOUND)//g' CMakeLists.txt || die
+		sed -i -e '/^include(FindSDL2 OPTIONAL)/d' CMakeLists.txt || die
+		sed -i -e '/^if(SDL2_FOUND)/d' CMakeLists.txt || die
+		sed -i -e '/^message("Using shared SDL2")/d' CMakeLists.txt || die
+		sed -i -e '/^include_directories(${SDL2_INCLUDE_DIR})/d' CMakeLists.txt || die
+		sed -i -e '/^else(SDL2_FOUND)/d' CMakeLists.txt || die
+		sed -i -e '/^endif(SDL2_FOUND)/d' CMakeLists.txt || die
 	fi
 
 	# Remove ALL the bundled libraries, aside from:
