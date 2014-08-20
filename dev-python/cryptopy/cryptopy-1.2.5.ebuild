@@ -11,7 +11,7 @@ DESCRIPTION="CryptoPy is a python crypto library that's old and unmaintained"
 HOMEPAGE="http://cryptopy.sourceforge.net"
 SRC_URI="mirror://sourceforge/cryptopy/cryptopy/${P}/${P}.tar.gz"
 
-LICENSE="CRYPTOPY"
+LICENSE="Cryptopy"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 

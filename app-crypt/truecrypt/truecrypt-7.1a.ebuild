@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/truecrypt/truecrypt-7.1a.ebuild,v 1.7 2013/12/08 19:57:54 alonbl Exp $
+# $Header: $
 
 EAPI="4"
 
@@ -14,7 +14,7 @@ http://git.gnupg.org/cgi-bin/gitweb.cgi?p=scute.git;a=blob_plain;f=src/pkcs11.h;
 
 LICENSE="truecrypt-3.0"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~ppc ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE="X +asm"
 
 RDEPEND=">=sys-fs/lvm2-2.02.45
@@ -22,7 +22,7 @@ RDEPEND=">=sys-fs/lvm2-2.02.45
 	x11-libs/wxGTK:2.8[X?]
 	app-admin/sudo"
 DEPEND="${RDEPEND}
-	!ppc? ( dev-lang/nasm )"
+	dev-lang/nasm"
 
 S="${WORKDIR}/${P}-source"
 

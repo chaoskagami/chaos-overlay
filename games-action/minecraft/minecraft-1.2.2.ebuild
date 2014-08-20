@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_7,3_1,3_2,3_3} )
+PYTHON_COMPAT=( python{2_7,3_1,3_2,3_3,3_4} )
 
 inherit eutils python-r1 games java-pkg-2
 
@@ -13,24 +13,14 @@ SRC_URI="https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar -> $
 LICENSE="Minecraft"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 RESTRICT="mirror"
 
 DEPEND="app-arch/zip
 	>=virtual/jdk-1.6"
 
-RDEPEND="|| (
-	>=dev-java/icedtea-6[X]
-	>=dev-java/icedtea-bin-6[X]
-	>=dev-java/oracle-jre-bin-1.6[X]
-	>=dev-java/oracle-jdk-bin-1.6[X]
-	>=dev-java/sun-jre-bin-1.6[X]
-	>=dev-java/sun-jdk-1.6[X] )
-
-	dev-java/gson:2.2.2
+RDEPEND="dev-java/gson:2.2.2
 	dev-java/java-config:2
 	>=dev-java/jopt-simple-4.5:0
-
 	>=dev-java/bcprov-1.47:0
 	>=dev-java/commons-io-2.4:1
 	dev-java/commons-lang:3.1

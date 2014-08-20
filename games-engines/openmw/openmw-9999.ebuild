@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/OpenMW/openmw"
 
 LICENSE="GPL-3 MIT BitstreamVera OFL-1.1"
 SLOT="0"
-KEYWORDS="**"
+KEYWORDS="~amd64 ~x86"
 IUSE="devtools +ffmpeg +launcher test"
 
 # XXX static build
