@@ -1,4 +1,4 @@
 chaos-overlay
 =============
 
-Repoman Status: [Travis-CI](https://travis-ci.org/chaoskagami/chaos-overlay.svg?branch=master)
+Repoman Status: [![Build Status](https://travis-ci.org/chaoskagami/chaos-overlay.svg?branch=master)](https://travis-ci.org/chaoskagami/chaos-overlay)
