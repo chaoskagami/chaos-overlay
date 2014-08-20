@@ -9,4 +9,7 @@ bugs. Games are playable at HD quality, with 1080p and more.
         <email>chaos.kagami@gmail.com</email>
         <name>Jon Feldman</name>
     </maintainer>
+    <use>
+        <flag name="nosdl2">Turns off SDL2 support, preferring SDL1.2</flag>
+    </use>
 </pkgmetadata>

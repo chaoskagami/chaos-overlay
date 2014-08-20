@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/desmume/desmume-0.9.9.ebuild,v 1.1 2013/05/28 10:34:08 hanno Exp $
+# $Header: $
 
 EAPI="5"
 
@@ -25,11 +25,8 @@ DEPEND=">=x11-libs/gtk+-2.8.0:2
 	x11-libs/agg"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack "${A}"
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-fixbool.patch"	
+src_prepare() {
+	epatch "${FILESDIR}/${P}-fixbool.patch"
 }
 
 src_configure() {

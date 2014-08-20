@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python{2_7,3_1,3_2,3_3} )
 
 inherit eutils python-r1 games java-pkg-2
 
-DESCRIPTION="A game about placing blocks while running from skeletons. Or something like that..."
+DESCRIPTION="A game about placing blocks while running from skeletons. Or something like that"
 HOMEPAGE="http://www.minecraft.net"
 SRC_URI="https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar -> $P.jar"
 LICENSE="Minecraft"

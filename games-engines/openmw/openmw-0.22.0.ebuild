@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SRC_URI="http://openmw.googlecode.com/files/${P}-source.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cdinstall devtools +ffmpeg mpg123 test"
+IUSE="devtools +ffmpeg mpg123 test"
 REQUIRED_USE="^^ ( mpg123 ffmpeg )"
 
 # XXX static build
@@ -34,7 +34,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? ( dev-cpp/gmock
 		dev-cpp/gtest )"
-PDEPEND="cdinstall? ( games-rpg/morrowind-data )"
 
 S=${WORKDIR}/${PN}-${P}
 

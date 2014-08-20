@@ -14,7 +14,7 @@ SRC_URI="mirror://kernel/linux/bluetooth/${P}.tar.xz
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~x86"
+KEYWORDS="**"
 IUSE="alsa cups debug gstreamer hid2hci pcmcia readline selinux test-programs usb"
 
 REQUIRED_USE="test-programs? ( ${PYTHON_REQUIRED_USE} )"

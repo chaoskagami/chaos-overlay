@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}-source.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cdinstall ffmpeg +mpg123"
+IUSE="ffmpeg +mpg123"
 
 RDEPEND=">=dev-games/mygui-3.2.0
 	>=dev-games/ogre-1.8.0[cg,freeimage,ois,opengl,zip]
@@ -30,7 +30,6 @@ RDEPEND=">=dev-games/mygui-3.2.0
 		media-sound/mpg123 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
-PDEPEND="cdinstall? ( games-rpg/morrowind-data )"
 
 REQUIRED_USE="^^ ( mpg123 ffmpeg )"
 
