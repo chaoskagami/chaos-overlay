@@ -2,4 +2,8 @@
 =games-engines/openmw-9999
 
 # Only unmask if you want it.
-=bluez/bluez-4.101-r9
+net-wireless/bluez
+
+# libretro-super is not ready for production.
+games-emulation/libretro-super
+

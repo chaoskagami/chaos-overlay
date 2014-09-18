@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer>
+    <email>chaos.kagami@gmail.com</email>
+    <name>Jon Feldman</name>
+  </maintainer>
+  <use>
+    <flag name="chardet">Try to handle non-UTF8 chinese/japanese/korean ID3 tags</flag>
+    <flag name="nls">Enable localization</flag>
+    <flag name="gtk">Use GTK2 toolkit.</flag>
+    <flag name="gtk3">Use GTK3 toolkit.</flag>
+    <flag name="qt">Use Qt toolkit.</flag>
+  </use>
+</pkgmetadata>
