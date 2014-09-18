@@ -27,7 +27,7 @@ RDEPEND="dev-java/gson:2.2.2
 	dev-java/guava:15
 	>=dev-java/jinput-1_pre20100416:0
 	dev-java/jutils:0
-	dev-java/lwjgl:2.9
+	>=dev-java/lwjgl-2.9.1
 	dev-java/paulscode-codecjorbis:0
 	dev-java/paulscode-codecwav:0
 	dev-java/paulscode-librarylwjglopenal:0
