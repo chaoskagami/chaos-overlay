@@ -23,8 +23,8 @@ RDEPEND="dev-java/gson:2.2.2
 	>=dev-java/jopt-simple-4.5:0
 	>=dev-java/bcprov-1.47:0
 	>=dev-java/commons-io-2.4:1
-	dev-java/commons-lang:3.1
-	dev-java/guava:15
+	dev-java/commons-lang:3.3
+	dev-java/guava:17
 	>=dev-java/jinput-1_pre20100416:0
 	dev-java/jutils:0
 	>=dev-java/lwjgl-2.9.1

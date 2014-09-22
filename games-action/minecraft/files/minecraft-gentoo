@@ -70,13 +70,13 @@ def transform(path):
     if match: return get_jar("commons-io-1", "commons-io.jar") or path
 
     match = re.match("org/apache/commons/commons-lang3/([^/]+)/", tail)
-    if match: return get_jar("commons-lang-3.1", "commons-lang.jar") or path
+    if match: return get_jar("commons-lang-3", "commons-lang.jar") or path
 
     match = re.match("com/google/code/gson/gson/([^/]+)/", tail)
     if match: return get_jar("gson-2.2.2", "gson.jar") or path
 
     match = re.match("com/google/guava/guava/([^/]+)/", tail)
-    if match: return get_jar("guava-14", "guava.jar") or path
+    if match: return get_jar("guava-17", "guava.jar") or path
 
     match = re.match("net/java/jinput/jinput/([^/]+)/", tail)
     if match: return get_jar("jinput", "jinput.jar") or path
@@ -88,7 +88,7 @@ def transform(path):
     if match: return get_jar("jutils", "jutils.jar") or path
 
     match = re.match("org/lwjgl/lwjgl/lwjgl(|_util)/([^/]+)/", tail)
-    if match: return get_jar("lwjgl-2.9", "lwjgl" + match.group(1) + ".jar") or path
+    if match: return get_jar("lwjgl-2.9.1", "lwjgl" + match.group(1) + ".jar") or path
 
     match = re.match("com/paulscode/(codecwav|librarylwjglopenal|libraryjavasound|soundsystem)/([^/]+)/", tail)
     if match: return get_jar("paulscode-" + match.group(1), "paulscode-" + match.group(1) + ".jar") or path
