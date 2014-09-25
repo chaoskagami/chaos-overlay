@@ -39,7 +39,7 @@ do_show() {
 	write_list_start "Current Wine Implementation:"
 	if [[ -L ${EROOT}/usr/lib/wine/system ]]; then
 		local imp=$(canonicalise "${EROOT}/usr/lib/wine/system")
-		write_kv_list_entry "${kernel%/}" ""
+		write_kv_list_entry "${imp%/}" ""
 	else
 		write_kv_list_entry "(unset)" ""
 	fi
