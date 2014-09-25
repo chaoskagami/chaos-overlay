@@ -4,7 +4,7 @@
 
 EAPI=5
 
-DESCRIPTION="Wine eselect module & Env support"
+DESCRIPTION="Wine eselect module and Env support"
 HOMEPAGE="http://www.github.com/chaoskagami/chaos-overlay"
 
 LICENSE="GPL-2"
@@ -21,5 +21,5 @@ src_install() {
         insinto /usr/share/eselect/modules/
         newins "${FILESDIR}"/wine.eselect wine.eselect
 	insinto /etc/env.d
-	newins "${FILESDIR}"/20wine 20wine
+	newins "${FILESDIR}"/90wine 90wine
 }

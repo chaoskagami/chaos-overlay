@@ -210,7 +210,6 @@ COMMON_DEPEND="
 	)"
 
 RDEPEND="${COMMON_DEPEND}
-	app-admin/eselect-wine
 	dos? ( games-emulation/dosbox )
 	perl? ( dev-lang/perl dev-perl/XML-Simple )
 	samba? ( >=net-fs/samba-3.0.25 )
