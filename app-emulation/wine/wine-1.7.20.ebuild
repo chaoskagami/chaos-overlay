@@ -466,7 +466,7 @@ multilib_src_install_all() {
 	for l in de fr pl; do
 		use linguas_${l} || rm -r "${D}"/share/man/${l}*
 	done
-        mv "${D}"/usr/share/* "${D}"/usr/lib/wine/${PV}/share/
+	mv "${D}"/usr/share/wine "${D}"/usr/lib/wine/${PV}/share/wine
 	rm -rf "${D}"/etc
 }
 
@@ -478,19 +478,14 @@ pkg_postinst() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 
-
 	if use pipelight; then
 		ewarn "You installed Wine with the unofficial Compholio patchset for Pipelight"
 		ewarn "support, which is unsupported by Wine developers. Please don't report"
 		ewarn "bugs to Wine bugzilla unless you can reproduce them with USE=-pipelight"
 	fi
-
-	ewarn "The slotted wine ebuilds here may or may not break horribly. You've been warned."
 }
 
 pkg_postrm() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 }
-
-

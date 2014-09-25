@@ -474,7 +474,7 @@ src_install() {
 		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
 	done
 
-        mv "${D}"/usr/share/* "${D}"/usr/lib/wine/${PV}/share/
+	mv "${D}"/usr/share/wine "${D}"/usr/lib/wine/${PV}/share/wine
 	rm -rf "${D}"/etc
 }
 

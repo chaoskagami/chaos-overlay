@@ -8,8 +8,6 @@ DESCRIPTION="Virtual for Multiple Wine Installation"
 SLOT="1"
 KEYWORDS="~amd64 ~arm ~ia64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 
-RDEPEND="|| (
-                app-emulation/wine:*
-        )
+RDEPEND="app-emulation/wine:*
 	=app-admin/eselect-wine-1"
 DEPEND=""

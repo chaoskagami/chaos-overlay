@@ -28,7 +28,7 @@ set_symlink() {
 		&& die -q "Invalid implementation \"$1\" specified."
 
 	ln -s "${target}" "${EROOT}/usr/lib/wine/system"
-	ln -s "${EROOT}/usr/share/${target}/share/wine" "${EROOT}/usr/share/wine"
+	ln -s "${EROOT}/usr/lib/wine/${target}/share/wine" "${EROOT}/usr/share/wine"
 }
 
 ### Show Action ###
