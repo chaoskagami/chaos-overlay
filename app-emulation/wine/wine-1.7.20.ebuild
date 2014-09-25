@@ -467,6 +467,7 @@ multilib_src_install_all() {
 		use linguas_${l} || rm -r "${D}"/share/man/${l}*
 	done
         rm -rf "${D}"/usr/share
+	rm -rf "${D}"/etc
 }
 
 pkg_preinst() {

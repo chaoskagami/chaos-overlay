@@ -475,6 +475,7 @@ src_install() {
 	done
 
         rm -rf "${D}"/usr/share
+	rm -rf "${D}"/etc
 }
 
 pkg_preinst() {

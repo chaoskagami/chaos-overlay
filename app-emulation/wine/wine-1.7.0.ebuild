@@ -417,6 +417,7 @@ src_install() {
 		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
 	done
         rm -rf "${D}"/usr/share
+	rm -rf "${D}"/etc
 }
 
 pkg_preinst() {

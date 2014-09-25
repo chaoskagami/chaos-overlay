@@ -416,6 +416,7 @@ src_install() {
 		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
 	done
         rm -rf "${D}"/usr/share
+	rm -rf "${D}"/etc
 }
 
 pkg_preinst() {
@@ -431,3 +432,4 @@ pkg_postrm() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 }
+
