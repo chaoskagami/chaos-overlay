@@ -7,3 +7,7 @@ net-wireless/bluez
 # libretro-super is not ready for production.
 games-emulation/libretro-super
 
+# Unmask to use wine from my repo.
+app-emulation/wine
+app-admin/eselect-wine
+virtual/wine
