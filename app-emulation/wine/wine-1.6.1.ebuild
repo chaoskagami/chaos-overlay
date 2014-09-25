@@ -436,4 +436,3 @@ pkg_postrm() {
 	fdo-mime_desktop_database_update
 }
 
-v
