@@ -470,8 +470,8 @@ multilib_src_install_all() {
 	use abi_x86_64 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine64{,-preloader}
 
 	if use abi_x86_64 && ! use abi_x86_32; then
-		dosym /usr/lib/wine/${PV}/bin/wine{64,} # 404331
-		dosym /usr/lib/wine/${PV}/bin/wine{64,}-preloader
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,} # 404331
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,}-preloader
 	fi
 
 	# respect LINGUAS when installing man pages, #469418
@@ -493,3 +493,4 @@ pkg_postrm() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 }
+

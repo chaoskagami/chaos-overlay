@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.7.21.ebuild,v 1.1 2014/06/29 00:42:47 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.172 2014/06/29 00:42:47 tetromino Exp $
 
 EAPI="5"
 
@@ -463,11 +463,11 @@ multilib_src_install_all() {
 		doins "${DISTDIR}"/wine-mono-${MV}.msi
 	fi
 	if ! use perl ; then
-		rm "${D}"/usr/lib/wine/${PV}/bin/{wine{dump,maker},function_grep.pl} "${D}"/usr/lib/wine/${PV}/share/man/man1/wine{dump,maker}.1 || die
+		rm "${D}"usr/lib/wine/${PV}/bin/{wine{dump,maker},function_grep.pl} "${D}"usr/lib/wine/${PV}/share/man/man1/wine{dump,maker}.1 || die
 	fi
 
-	use abi_x86_32 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine{,-preloader} #255055
-	use abi_x86_64 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine64{,-preloader}
+	use abi_x86_32 && pax-mark psmr "${D}"usr/bin/wine{,-preloader} #255055
+	use abi_x86_64 && pax-mark psmr "${D}"usr/bin/wine64{,-preloader}
 
 	if use abi_x86_64 && ! use abi_x86_32; then
 		dosym /usr/lib/wine/${PV}/bin/wine{64,} # 404331
@@ -476,7 +476,7 @@ multilib_src_install_all() {
 
 	# respect LINGUAS when installing man pages, #469418
 	for l in de fr pl; do
-		use linguas_${l} || rm -r "${D}"/usr/lib/wine/${PV}/share/man/${l}*
+		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
 	done
 }
 
@@ -493,3 +493,4 @@ pkg_postrm() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 }
+
