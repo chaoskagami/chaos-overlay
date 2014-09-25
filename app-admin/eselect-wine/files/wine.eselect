@@ -13,6 +13,7 @@ find_targets() {
 
 remove_symlink() {
 	rm "${EROOT}/usr/lib/wine/system"
+	rm "${EROOT}/usr/share/wine"
 }
 
 set_symlink() {
@@ -23,10 +24,11 @@ set_symlink() {
 		target=${targets[target-1]}
 	fi
 
-	[[ -z ${target} || ! -d ${EROOT}/usr/lib/wine/${target} ]] \
+	[[ -z ${target} || ! -d ${EROOT}/usr/lib/wine/${target} || ! -d ${EROOT}/usr/lib/wine/${target}/share || ! -d ${EROOT}/usr/lib/wine/${target}/share/wine ]] \
 		&& die -q "Invalid implementation \"$1\" specified."
 
 	ln -s "${target}" "${EROOT}/usr/lib/wine/system"
+	ln -s "${EROOT}/usr/share/${target}/share/wine" "${EROOT}/usr/share/wine"
 }
 
 ### Show Action ###

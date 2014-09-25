@@ -418,7 +418,7 @@ src_install() {
 	for l in de fr pl; do
 		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
 	done
-        rm -rf "${D}"/usr/share
+        mv "${D}"/usr/share/* "${D}"/usr/lib/wine/${PV}/share/
 	rm -rf "${D}"/etc
 }
 
@@ -436,3 +436,4 @@ pkg_postrm() {
 	fdo-mime_desktop_database_update
 }
 
+v
