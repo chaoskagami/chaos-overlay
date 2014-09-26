@@ -25,7 +25,7 @@ src_install() {
 	cp "${FILESDIR}"/90wine ${D}/etc/env.d/90wine
 }
 
-src_postinst() {
+pkg_postinst() {
 	elog "Reconfiguring to use first wine instance."
 
 	eselect wine set 1
