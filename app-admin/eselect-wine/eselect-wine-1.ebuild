@@ -18,13 +18,15 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}"
 
 src_install() {
-	insinto /usr/share/eselect/modules/
-	newins "${FILESDIR}"/wine.eselect wine.eselect
-	insinto /etc/env.d
-	newins "${FILESDIR}"/90wine 90wine
+	dodir /usr/share/eselect/modules/
+	cp "${FILESDIR}"/wine.eselect ${D}/usr/share/eselect/modules/wine.eselect
 
-	insinto /usr/share/
-	touch ${D}/usr/share/wine
-	insinto /usr/lib/wine/
+	dodir /etc/env.d/
+	cp "${FILESDIR}"/90wine ${D}/etc/env.d/90wine
+
+	dodir /usr/lib/wine/
 	touch ${D}/usr/lib/wine/system
+
+	dodir /usr/share
+	touch ${D}/usr/share/wine
 }
