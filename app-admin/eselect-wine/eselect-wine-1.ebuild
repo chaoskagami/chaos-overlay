@@ -23,10 +23,10 @@ src_install() {
 
 	dodir /etc/env.d/
 	cp "${FILESDIR}"/90wine ${D}/etc/env.d/90wine
+}
 
-	dodir /usr/lib/wine/
-	touch ${D}/usr/lib/wine/system
+src_postinst() {
+	elog "Reconfiguring to use first wine instance."
 
-	dodir /usr/share
-	touch ${D}/usr/share/wine
+	eselect wine set 1
 }
