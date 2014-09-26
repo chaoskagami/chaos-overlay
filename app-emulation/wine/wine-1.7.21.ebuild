@@ -480,6 +480,7 @@ multilib_src_install_all() {
 	for f in "${D}"/usr/share/wine/*; do
 		mv "$f" "${D}"/usr/lib/wine/${PV}/share/wine/
 	done
+	rm -rf "${D}"/usr/share
 	rm -rf "${D}"/etc
 }
 
