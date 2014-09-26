@@ -22,4 +22,9 @@ src_install() {
 	newins "${FILESDIR}"/wine.eselect wine.eselect
 	insinto /etc/env.d
 	newins "${FILESDIR}"/90wine 90wine
+
+	insinto /usr/share/
+	touch ${D}/usr/share/wine
+	insinto /usr/lib/wine/
+	touch ${D}/usr/lib/wine/system
 }
