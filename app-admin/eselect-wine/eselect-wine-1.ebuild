@@ -19,10 +19,10 @@ S="${WORKDIR}"
 
 src_install() {
 	dodir /usr/share/eselect/modules/
-	cp "${FILESDIR}"/wine.eselect ${D}/usr/share/eselect/modules/wine.eselect
+	cp "${FILESDIR}"/wine.eselect "${D}"/usr/share/eselect/modules/wine.eselect
 
 	dodir /etc/env.d/
-	cp "${FILESDIR}"/90wine ${D}/etc/env.d/90wine
+	cp "${FILESDIR}"/90wine "${D}"/etc/env.d/90wine
 }
 
 pkg_postinst() {

@@ -26,9 +26,9 @@ RDEPEND="x11-libs/libXext
 	openal? ( media-libs/openal )
 	opengl? ( virtual/opengl )
 	ffmpeg? ( virtual/ffmpeg )
-	virtual/pkgconfig
 	"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	virtual/ffmpeg"
 
 src_configure() {
 	bash libretro-fetch.sh
@@ -39,6 +39,6 @@ src_compile() {
 }
 
 src_install() {
-        bash libretro-install.sh "${D}"/"${GAMES_PREFIX}" || die "emake failed"
-        prepgamesdirs
+	bash libretro-install.sh "${D}"/"${GAMES_PREFIX}" || die "emake failed"
+	prepgamesdirs
 }

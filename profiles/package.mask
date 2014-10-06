@@ -1,9 +1,6 @@
 # Openmw git is not stable
 =games-engines/openmw-9999
 
-# Only unmask if you want it.
-net-wireless/bluez
-
 # libretro-super is not ready for production.
 games-emulation/libretro-super
 

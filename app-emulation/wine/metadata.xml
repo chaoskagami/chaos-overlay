@@ -26,7 +26,5 @@ My ebuild implementations are derived from upstream gentoo, but mine are slotted
 	<flag name='samba'>Add support for NTLM auth. see
 		http://wiki.winehq.org/NtlmAuthSetupGuide and
 		http://wiki.winehq.org/NtlmSigningAndSealing</flag>
-	<flag name='win32'>Build a 32bit version of Wine (won't run Win64 binaries)</flag>
-	<flag name='win64'>Build a 64bit version of Wine (won't run Win32 binaries)</flag>
 </use>
 </pkgmetadata>
