@@ -5,3 +5,9 @@
 app-emulation/wine
 app-admin/eselect-wine
 virtual/wine
+
+# Not stable.
+games-emulation/rpcs3
+
+# Add layman abendbrot first. This is an addon of sorts.
+games-emulation/ppsspp-libretro
