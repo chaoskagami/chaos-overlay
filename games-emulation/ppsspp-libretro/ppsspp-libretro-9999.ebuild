@@ -29,7 +29,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -f Makefile || die "emake failed"
+	emake -f libretro/Makefile || die "emake failed"
 }
 
 src_install() {
