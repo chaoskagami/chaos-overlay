@@ -7,7 +7,7 @@ EAPI=5
 inherit git-r3
 
 DESCRIPTION="libretro implementation of PPSSPP. (Sony Playstation Portable)"
-HOMEPAGE="https://github.com/libretro/livretro-ppsspp"
+HOMEPAGE="https://github.com/libretro/libretro-ppsspp"
 SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/libretro/libretro-ppsspp.git"
@@ -29,7 +29,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -f Makefile.libretro || die "emake failed"
+	emake -f Makefile || die "emake failed"
 }
 
 src_install() {
