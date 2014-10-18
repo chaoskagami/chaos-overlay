@@ -20,6 +20,8 @@ IUSE=""
 RDEPEND=""
 DEPEND=""
 
+S="${S}/libretro"
+
 src_unpack() {
 	git-r3_fetch https://github.com/libretro/libretro-super.git HEAD
 	git-r3_checkout https://github.com/libretro/libretro-super.git \
@@ -29,7 +31,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -f libretro/Makefile || die "emake failed"
+	emake -f Makefile || die "emake failed"
 }
 
 src_install() {

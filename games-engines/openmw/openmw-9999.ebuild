@@ -17,7 +17,7 @@ IUSE="devtools +ffmpeg +launcher test"
 
 # XXX static build
 RDEPEND=">=dev-games/mygui-3.2.0
-	>=dev-games/ogre-1.8.0[cg,freeimage,ois,opengl,zip]
+	>=dev-games/ogre-1.9.0[cg,freeimage,ois,opengl,zip]
 	dev-games/ois
 	>=dev-libs/boost-1.46.0
 	dev-libs/tinyxml
@@ -42,8 +42,7 @@ src_prepare() {
 	ewarn "I guarantee nothing, okay? - @chaoskagami"
 
 	epatch "${FILESDIR}"/${PN}-0.15.0-cfg.patch \
-		"${FILESDIR}"/${PN}-0.26.0-build.patch \
-		"${FILESDIR}"/${PN}-0.31.0-build.patch
+		"${FILESDIR}"/${PN}-0.26.0-build.patch
 
 	sed \
 		-e "s#globalPath(\"/etc/\")#globalPath(\"${GAMES_SYSCONFDIR}\")#" \

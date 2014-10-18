@@ -1,4 +1,4 @@
-# Openmw git is not stable
+# Openmw git is masked for stability reasons. Unmask if you want it.
 =games-engines/openmw-9999
 
 # Unmask to use wine from my repo.
