@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.7.19-r1.ebuild,v 1.6 2014/06/18 19:08:46 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.172 2014/06/29 00:42:47 tetromino Exp $
 
 EAPI="5"
 
@@ -8,7 +8,7 @@ AUTOTOOLS_AUTORECONF=1
 PLOCALES="ar bg ca cs da de el en en_US eo es fa fi fr he hi hr hu it ja ko lt ml nb_NO nl or pa pl pt_BR pt_PT rm ro ru sk sl sr_RS@cyrillic sr_RS@latin sv te th tr uk wa zh_CN zh_TW"
 PLOCALE_BACKUP="en"
 
-inherit autotools-multilib eutils fdo-mime flag-o-matic gnome2-utils l10n multilib pax-utils toolchain-funcs virtualx
+inherit autotools-utils eutils fdo-mime flag-o-matic gnome2-utils l10n multilib multilib-minimal pax-utils toolchain-funcs virtualx
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://source.winehq.org/git/wine.git"
@@ -22,12 +22,8 @@ else
 	S=${WORKDIR}/${MY_P}
 fi
 
-GV="2.24"
-MV="4.5.2"
-PULSE_PATCHES="winepulse-patches-1.7.12"
-COMPHOLIOV="1.7.18-1"
-COMPHOLIO_PATCHES="wine-compholio-daily-${COMPHOLIOV}"
-WINE_GENTOO="wine-gentoo-2013.06.24"
+GV="2.34"
+MV="4.5.4"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
@@ -35,10 +31,7 @@ SRC_URI="${SRC_URI}
 		abi_x86_32? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86.msi )
 		abi_x86_64? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
 	)
-	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )
-	pipelight? ( https://github.com/compholio/wine-compholio-daily/archive/v${COMPHOLIOV}.tar.gz -> ${COMPHOLIO_PATCHES}.tar.gz )
-	pulseaudio? ( http://dev.gentoo.org/~tetromino/distfiles/${PN}/${PULSE_PATCHES}.tar.bz2 )
-	http://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
+	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )"
 
 LICENSE="LGPL-2.1"
 SLOT="${PV}"
@@ -46,8 +39,10 @@ IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fon
 REQUIRED_USE="|| ( abi_x86_32 abi_x86_64 )
 	test? ( abi_x86_32 )
 	elibc_glibc? ( threads )
+	gstreamer? ( pulseaudio )
 	mono? ( abi_x86_32 )
 	osmesa? ( opengl )" #286560
+# winepulse patches needed for gstreamer due to http://bugs.winehq.org/show_bug.cgi?id=30557
 
 # FIXME: the test suite is unsuitable for us; many tests require net access
 # or fail due to Xvfb's opengl limitations.
@@ -88,8 +83,6 @@ NATIVE_DEPEND="
 	nls? ( sys-devel/gettext )
 	odbc? ( dev-db/unixODBC:= )
 	osmesa? ( media-libs/mesa[osmesa] )
-	pipelight? ( sys-apps/attr )
-	pulseaudio? ( media-sound/pulseaudio )
 	xml? ( dev-libs/libxml2 dev-libs/libxslt )
 	scanner? ( media-gfx/sane-backends:= )
 	ssl? ( net-libs/gnutls:= )
@@ -183,6 +176,7 @@ COMMON_DEPEND="
 				app-emulation/emul-linux-x86-soundlibs[development,-abi_x86_32(-)]
 				>=media-sound/mpg123-1.15.4[abi_x86_32(-)]
 			) )
+			netapi? ( >=net-fs/samba-3.6.23-r1[netapi(+),abi_x86_32(-)] )
 			nls? ( || (
 				app-emulation/emul-linux-x86-baselibs[development,-abi_x86_32(-)]
 				>=sys-devel/gettext-0.18.3.2[abi_x86_32(-)]
@@ -194,14 +188,6 @@ COMMON_DEPEND="
 			osmesa? ( || (
 				>=app-emulation/emul-linux-x86-opengl-20121028[development,-abi_x86_32(-)]
 				>=media-libs/mesa-9.1.6[osmesa,abi_x86_32(-)]
-			) )
-			pipelight? ( || (
-				app-emulation/emul-linux-x86-baselibs[development,-abi_x86_32(-)]
-				>=sys-apps/attr-2.4.47-r1[abi_x86_32(-)]
-			) )
-			pulseaudio? ( || (
-				app-emulation/emul-linux-x86-soundlibs[development,-abi_x86_32(-)]
-				>=media-sound/pulseaudio-5.0[abi_x86_32(-)]
 			) )
 			xml? ( || (
 				>=app-emulation/emul-linux-x86-baselibs-20131008[development,-abi_x86_32(-)]
@@ -238,8 +224,7 @@ RDEPEND="${COMMON_DEPEND}
 	perl? ( dev-lang/perl dev-perl/XML-Simple )
 	samba? ( >=net-fs/samba-3.0.25 )
 	selinux? ( sec-policy/selinux-wine )
-	udisks? ( sys-fs/udisks:2 )
-	pulseaudio? ( realtime? ( sys-auth/rtkit ) )"
+	udisks? ( sys-fs/udisks:2 )"
 
 DEPEND="${COMMON_DEPEND}
 	amd64? ( abi_x86_32? ( !abi_x86_64? ( ${NATIVE_DEPEND} ) ) )
@@ -294,16 +279,6 @@ src_unpack() {
 		unpack ${MY_P}.tar.bz2
 	fi
 
-	use pulseaudio && unpack "${PULSE_PATCHES}.tar.bz2"
-	if use pipelight; then
-		unpack "${COMPHOLIO_PATCHES}.tar.gz"
-		# we use a separate pulseaudio patchset
-		rm -r "${COMPHOLIO_PATCHES}/patches/06-winepulse" || die
-		# ... and need special tools for binary patches
-		mv "${COMPHOLIO_PATCHES}/patches/10-Missing_Fonts" "${T}" || die
-	fi
-	unpack "${WINE_GENTOO}.tar.bz2"
-
 	l10n_find_plocales_changes "${S}/po" "" ".po"
 }
 
@@ -316,20 +291,12 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 	)
-	use pulseaudio && PATCHES+=(
-		"../${PULSE_PATCHES}"/*.patch #421365
-	)
-	if use pipelight; then
-		PATCHES+=(
-			"../${COMPHOLIO_PATCHES}/patches"/*/*.patch #507950
-			"../${COMPHOLIO_PATCHES}/patches/patch-list.patch"
-		)
-		# epatch doesn't support binary patches
-		ebegin "Applying Compholio font patches"
-		for f in "${T}/10-Missing_Fonts"/*.patch; do
-			"../${COMPHOLIO_PATCHES}/debian/tools/gitapply.sh" < "${f}" || die "Failed to apply Compholio font patches"
-		done
-		eend
+	if use gstreamer; then
+		# See http://bugs.winehq.org/show_bug.cgi?id=30557
+		ewarn "Applying experimental patch to fix GStreamer support. Note that"
+		ewarn "this patch has been reported to cause crashes in certain games."
+
+		PATCHES+=( "../${PULSE_PATCHES}"/gstreamer/*.patch )
 	fi
 	autotools-utils_src_prepare
 
@@ -342,39 +309,18 @@ src_prepare() {
 		sed -i '/^MimeType/d' tools/wine.desktop || die #117785
 	fi
 
-	# hi-res default icon, #472990, http://bugs.winehq.org/show_bug.cgi?id=24652
-	cp "${WORKDIR}"/${WINE_GENTOO}/icons/oic_winlogo.ico dlls/user32/resources/ || die
-
 	l10n_get_locales > po/LINGUAS # otherwise wine doesn't respect LINGUAS
-}
-
-do_configure() {
-	local myeconfargs=( "${myeconfargs[@]}" )
-
-	if use amd64; then
-		if [[ ${ABI} == amd64 ]]; then
-			myeconfargs+=( --enable-win64 )
-		else
-			use netapi && ewarn "Disabling netapi in wine32; see https://bugs.gentoo.org/494394"
-			# We currently don't have 32-bit libnetapi on amd64; #494394
-			myeconfargs+=(
-				--without-netapi
-				--disable-win64
-			)
-		fi
-
-		# Note: using --with-wine64 results in problems with multilib.eclass
-		# CC/LD hackery. We're using separate tools instead.
-	fi
-
-	autotools-utils_src_configure
 }
 
 src_configure() {
 	export LDCONFIG=/bin/true
 	use custom-cflags || strip-flags
 
-	local myeconfargs=( # common
+	multilib-minimal_src_configure
+}
+
+multilib_src_configure() {
+	local myconf=(
 		--sysconfdir=/etc/wine
 		$(use_with alsa)
 		$(use_with capi)
@@ -412,42 +358,46 @@ src_configure() {
 		--prefix=/usr/lib/wine/${PV}/
 	)
 
-	use pulseaudio && myeconfargs+=( --with-pulse )
-	use pipelight && myeconfargs+=( --with-xattr )
+	local PKG_CONFIG AR RANLIB
+	# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038
+	# set AR and RANLIB to make QA scripts happy; #483342
+	tc-export PKG_CONFIG AR RANLIB
 
-	if use amd64 && use abi_x86_32; then
-		# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038
-		# set AR and RANLIB to make QA scripts happy; #483342
-		tc-export PKG_CONFIG AR RANLIB
+	if use amd64; then
+		if [[ ${ABI} == amd64 ]]; then
+			myconf+=( --enable-win64 )
+		else
+			myconf+=( --disable-win64 )
+		fi
+
+		# Note: using --with-wine64 results in problems with multilib.eclass
+		# CC/LD hackery. We're using separate tools instead.
 	fi
 
-	multilib_parallel_foreach_abi do_configure
+	ECONF_SOURCE=${S} \
+	econf "${myconf[@]}"
+	emake depend
 }
 
-src_compile() {
-	autotools-multilib_src_compile depend
-	autotools-multilib_src_compile all
-}
-
-src_test() {
-	if [[ $(id -u) == 0 ]]; then
-		ewarn "Skipping tests since they cannot be run under the root user."
-		ewarn "To run the test ${PN} suite, add userpriv to FEATURES in make.conf"
-		return
-	fi
-
+multilib_src_test() {
 	# FIXME: win32-only; wine64 tests fail with "could not find the Wine loader"
-	multilib_toolchain_setup x86
-	local BUILD_DIR="${S}-${ABI}"
-	cd "${BUILD_DIR}" || die
-	WINEPREFIX="${T}/.wine-${ABI}" Xemake test
+	if [[ ${ABI} == x86 ]]; then
+		if [[ $(id -u) == 0 ]]; then
+			ewarn "Skipping tests since they cannot be run under the root user."
+			ewarn "To run the test ${PN} suite, add userpriv to FEATURES in make.conf"
+			return
+		fi
+
+		WINEPREFIX="${T}/.wine-${ABI}" \
+		Xemake test
+	fi
 }
 
-src_install() {
+multilib_src_install_all() {
 	local l
-	autotools-multilib_src_install
 
-	emake -C "../${WINE_GENTOO}" install DESTDIR="${D}" EPREFIX="${EPREFIX}"
+	prune_libtool_files --all
+
 	if use gecko ; then
 		insinto /usr/lib/wine/${PV}/share/wine/gecko
 		use abi_x86_32 && doins "${DISTDIR}"/wine_gecko-${GV}-x86.msi
@@ -458,22 +408,21 @@ src_install() {
 		doins "${DISTDIR}"/wine-mono-${MV}.msi
 	fi
 	if ! use perl ; then
-		rm "${D}"usr/lib/wine/${PV}/bin/{wine{dump,maker},function_grep.pl} "${D}"usr/lib/wine/${PV}/share/man/man1/wine{dump,maker}.1 || die
+		rm "${D}"/usr/lib/wine/${PV}/bin/{wine{dump,maker},function_grep.pl} "${D}"/usr/lib/wine/${PV}/share/man/man1/wine{dump,maker}.1 || die
 	fi
 
-	use abi_x86_32 && pax-mark psmr "${D}"usr/lib/wine/${PV}/bin/wine{,-preloader} #255055
-	use abi_x86_64 && pax-mark psmr "${D}"usr/lib/wine/${PV}/bin/wine64{,-preloader}
+	use abi_x86_32 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine{,-preloader} #255055
+	use abi_x86_64 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine64{,-preloader}
 
 	if use abi_x86_64 && ! use abi_x86_32; then
-		dosym /usr/lib/wine/${PV}/bin/wine{64,} # 404331
-		dosym /usr/lib/wine/${PV}/bin/wine{64,}-preloader
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,} # 404331
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,}-preloader
 	fi
 
 	# respect LINGUAS when installing man pages, #469418
 	for l in de fr pl; do
-		use linguas_${l} || rm -r "${D}"usr/lib/wine/${PV}/share/man/${l}*
+		use linguas_${l} || rm -r "${D}"/usr/lib/wine/${PV}/share/man/${l}*
 	done
-
 	for f in "${D}"/usr/share/wine/*; do
 		mv "$f" "${D}"/usr/lib/wine/${PV}/share/wine/
 	done
@@ -488,12 +437,6 @@ pkg_preinst() {
 pkg_postinst() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
-
-	if use pipelight; then
-		ewarn "You installed Wine with the unofficial Compholio patchset for Pipelight"
-		ewarn "support, which is unsupported by Wine developers. Please don't report"
-		ewarn "bugs to Wine bugzilla unless you can reproduce them with USE=-pipelight"
-	fi
 }
 
 pkg_postrm() {

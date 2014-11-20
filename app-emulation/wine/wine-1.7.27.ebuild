@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.7.21.ebuild,v 1.1 2014/06/29 00:42:47 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.172 2014/06/29 00:42:47 tetromino Exp $
 
 EAPI="5"
 
@@ -22,12 +22,8 @@ else
 	S=${WORKDIR}/${MY_P}
 fi
 
-GV="2.24"
-MV="4.5.2"
-PULSE_PATCHES="winepulse-patches-1.7.21"
-COMPHOLIOV="1.7.21"
-COMPHOLIO_PATCHES="wine-compholio-daily-${COMPHOLIOV}"
-WINE_GENTOO="wine-gentoo-2013.06.24"
+GV="2.34"
+MV="4.5.4"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
@@ -35,10 +31,7 @@ SRC_URI="${SRC_URI}
 		abi_x86_32? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86.msi )
 		abi_x86_64? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
 	)
-	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )
-	pipelight? ( https://github.com/compholio/wine-compholio-daily/archive/v${COMPHOLIOV}.tar.gz -> ${COMPHOLIO_PATCHES}.tar.gz )
-	pulseaudio? ( http://dev.gentoo.org/~tetromino/distfiles/${PN}/${PULSE_PATCHES}.tar.bz2 )
-	http://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
+	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )"
 
 LICENSE="LGPL-2.1"
 SLOT="${PV}"
@@ -90,8 +83,6 @@ NATIVE_DEPEND="
 	nls? ( sys-devel/gettext )
 	odbc? ( dev-db/unixODBC:= )
 	osmesa? ( media-libs/mesa[osmesa] )
-	pipelight? ( sys-apps/attr )
-	pulseaudio? ( media-sound/pulseaudio )
 	xml? ( dev-libs/libxml2 dev-libs/libxslt )
 	scanner? ( media-gfx/sane-backends:= )
 	ssl? ( net-libs/gnutls:= )
@@ -198,14 +189,6 @@ COMMON_DEPEND="
 				>=app-emulation/emul-linux-x86-opengl-20121028[development,-abi_x86_32(-)]
 				>=media-libs/mesa-9.1.6[osmesa,abi_x86_32(-)]
 			) )
-			pipelight? ( || (
-				app-emulation/emul-linux-x86-baselibs[development,-abi_x86_32(-)]
-				>=sys-apps/attr-2.4.47-r1[abi_x86_32(-)]
-			) )
-			pulseaudio? ( || (
-				app-emulation/emul-linux-x86-soundlibs[development,-abi_x86_32(-)]
-				>=media-sound/pulseaudio-5.0[abi_x86_32(-)]
-			) )
 			xml? ( || (
 				>=app-emulation/emul-linux-x86-baselibs-20131008[development,-abi_x86_32(-)]
 				(
@@ -241,8 +224,7 @@ RDEPEND="${COMMON_DEPEND}
 	perl? ( dev-lang/perl dev-perl/XML-Simple )
 	samba? ( >=net-fs/samba-3.0.25 )
 	selinux? ( sec-policy/selinux-wine )
-	udisks? ( sys-fs/udisks:2 )
-	pulseaudio? ( realtime? ( sys-auth/rtkit ) )"
+	udisks? ( sys-fs/udisks:2 )"
 
 DEPEND="${COMMON_DEPEND}
 	amd64? ( abi_x86_32? ( !abi_x86_64? ( ${NATIVE_DEPEND} ) ) )
@@ -297,16 +279,6 @@ src_unpack() {
 		unpack ${MY_P}.tar.bz2
 	fi
 
-	use pulseaudio && unpack "${PULSE_PATCHES}.tar.bz2"
-	if use pipelight; then
-		unpack "${COMPHOLIO_PATCHES}.tar.gz"
-		# we use a separate pulseaudio patchset
-		rm -r "${COMPHOLIO_PATCHES}/patches/06-winepulse" || die
-		# ... and need special tools for binary patches
-		mv "${COMPHOLIO_PATCHES}/patches/10-Missing_Fonts" "${T}" || die
-	fi
-	unpack "${WINE_GENTOO}.tar.bz2"
-
 	l10n_find_plocales_changes "${S}/po" "" ".po"
 }
 
@@ -319,31 +291,12 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 	)
-	use pulseaudio && PATCHES+=(
-		"../${PULSE_PATCHES}"/*.patch #421365
-	)
 	if use gstreamer; then
 		# See http://bugs.winehq.org/show_bug.cgi?id=30557
 		ewarn "Applying experimental patch to fix GStreamer support. Note that"
 		ewarn "this patch has been reported to cause crashes in certain games."
 
 		PATCHES+=( "../${PULSE_PATCHES}"/gstreamer/*.patch )
-	fi
-	if use pipelight; then
-		ewarn "Applying the unofficial Compholio patchset for Pipelight support,"
-		ewarn "which is unsupported by Wine developers. Please don't report bugs"
-		ewarn "to Wine bugzilla unless you can reproduce them with USE=-pipelight"
-
-		PATCHES+=(
-			"../${COMPHOLIO_PATCHES}/patches"/*/*.patch #507950
-			"../${COMPHOLIO_PATCHES}/patches/patch-list.patch"
-		)
-		# epatch doesn't support binary patches
-		ebegin "Applying Compholio font patches"
-		for f in "${T}/10-Missing_Fonts"/*.patch; do
-			"../${COMPHOLIO_PATCHES}/debian/tools/gitapply.sh" < "${f}" || die "Failed to apply Compholio font patches"
-		done
-		eend
 	fi
 	autotools-utils_src_prepare
 
@@ -355,9 +308,6 @@ src_prepare() {
 	if ! use run-exes; then
 		sed -i '/^MimeType/d' tools/wine.desktop || die #117785
 	fi
-
-	# hi-res default icon, #472990, http://bugs.winehq.org/show_bug.cgi?id=24652
-	cp "${WORKDIR}"/${WINE_GENTOO}/icons/oic_winlogo.ico dlls/user32/resources/ || die
 
 	l10n_get_locales > po/LINGUAS # otherwise wine doesn't respect LINGUAS
 }
@@ -408,9 +358,6 @@ multilib_src_configure() {
 		--prefix=/usr/lib/wine/${PV}/
 	)
 
-	use pulseaudio && myconf+=( --with-pulse )
-	use pipelight && myconf+=( --with-xattr )
-
 	local PKG_CONFIG AR RANLIB
 	# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038
 	# set AR and RANLIB to make QA scripts happy; #483342
@@ -451,7 +398,6 @@ multilib_src_install_all() {
 
 	prune_libtool_files --all
 
-	emake -C "../${WINE_GENTOO}" install DESTDIR="${D}" EPREFIX="${EPREFIX}"
 	if use gecko ; then
 		insinto /usr/lib/wine/${PV}/share/wine/gecko
 		use abi_x86_32 && doins "${DISTDIR}"/wine_gecko-${GV}-x86.msi
@@ -469,20 +415,18 @@ multilib_src_install_all() {
 	use abi_x86_64 && pax-mark psmr "${D}"/usr/lib/wine/${PV}/bin/wine64{,-preloader}
 
 	if use abi_x86_64 && ! use abi_x86_32; then
-		dosym /usr/lib/wine/${PV}/bin/wine{64,} # 404331
-		dosym /usr/lib/wine/${PV}/bin/wine{64,}-preloader
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,} # 404331
+		dosym "${D}"/usr/lib/wine/${PV}/bin/wine{64,}-preloader
 	fi
 
 	# respect LINGUAS when installing man pages, #469418
 	for l in de fr pl; do
 		use linguas_${l} || rm -r "${D}"/usr/lib/wine/${PV}/share/man/${l}*
 	done
-
 	for f in "${D}"/usr/share/wine/*; do
 		mv "$f" "${D}"/usr/lib/wine/${PV}/share/wine/
 	done
 	rm -rf "${D}"/usr/share
-
 	rm -rf "${D}"/etc
 }
 
