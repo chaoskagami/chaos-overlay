@@ -78,7 +78,6 @@ src_compile() {
 
 src_install() {
 	cmake-utils_src_install
-	dodoc readme.txt
 	prepgamesdirs
 }
 
