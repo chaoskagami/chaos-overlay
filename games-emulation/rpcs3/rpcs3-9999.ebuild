@@ -73,8 +73,7 @@ src_install() {
 
 	cmake-utils_src_install
 
-	dodoc README.md
-	dobin bin/rpcs3
+	dobin "${BUILD_DIR}"/bin/"${PN}"
 
 	make_desktop_entry "rpcs3" "rpcs3" "rpcs3" "Game;"
 
