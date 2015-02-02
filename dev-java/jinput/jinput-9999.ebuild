@@ -2,23 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 # svn export https://svn.java.net/svn/jinput~svn/trunk jinput-r${REV}
 # rm -r jinput-r${REV}/lib/*
 # tar Jcf jinput-r${REV}{.tar.xz,}
 
-REV="247"
-MY_P="${PN}-r${REV}"
-
 WANT_ANT_TASKS="ant-nodeps"
 JAVA_PKG_IUSE="source"
 
-inherit eutils java-pkg-2 java-ant-2
+inherit eutils java-pkg-2 java-ant-2 git-r3
 
 DESCRIPTION="An implementation of an API for game controller discovery and polled input"
 HOMEPAGE="https://jinput.dev.java.net"
-SRC_URI="http://dev.gentooexperimental.org/~chewi/distfiles/${MY_P}.tar.xz"
+EGIT_REPO_URI="https://github.com/jinput/jinput"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -30,16 +27,15 @@ DEPEND=">=virtual/jdk-1.4
 RDEPEND=">=virtual/jre-1.4
 	dev-java/jutils"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${P}"
 
 JAVA_PKG_BSFIX="off"
 EANT_BUILD_TARGET="dist"
 
 src_prepare() {
-	java-pkg_jar-from --into lib jutils
+	cp "${FILESDIR}/build.xml" "${S}/build.xml"
 
-	epatch "${FILESDIR}/jinput-remove-getDeviceUsageBits.patch" # http://java.net/jira/browse/JINPUT-44
-	epatch "${FILESDIR}/jinput-javah-classpath.patch" # http://java.net/jira/browse/JINPUT-45
+	java-pkg_jar-from --into lib jutils
 
 	sed -i \
 		-e "s/-O[0-9]/${CFLAGS} ${LDFLAGS}/g" \

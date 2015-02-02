@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 RESTRICT="mirror"
 
 DEPEND="app-arch/zip
-	>=virtual/jdk-1.6"
+	>=virtual/jdk-1.7"
 
 RDEPEND="dev-java/gson:2.2.2
 	dev-java/java-config:2
@@ -25,7 +25,7 @@ RDEPEND="dev-java/gson:2.2.2
 	>=dev-java/commons-io-2.4:1
 	dev-java/commons-lang:3.3
 	dev-java/guava:17
-	>=dev-java/jinput-1_pre20100416:0
+	dev-java/jinput:0
 	dev-java/jutils:0
 	>=dev-java/lwjgl-2.9.1
 	dev-java/paulscode-codecjorbis:0
