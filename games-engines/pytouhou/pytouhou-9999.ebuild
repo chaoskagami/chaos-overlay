@@ -12,7 +12,7 @@ EHG_REPO_URI="http://hg.linkmauve.fr/touhou"
 PYTHON_COMPAT=(python2_7)
 inherit distutils-r1
 
-LICENSE="GPL3"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 
