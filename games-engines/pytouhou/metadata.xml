@@ -5,4 +5,8 @@
 		<email>chaos.kagami@gmail.com</email>
 		<name>Jon Feldman</name>
 	</maintainer>
+	<use>
+		<flag name="gtk">Build the GTK+3 interface</flag>
+	</use>
 </pkgmetadata>
+

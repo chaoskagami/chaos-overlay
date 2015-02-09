@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,7 +12,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 EHG_REPO_URI="http://hg.code.sf.net/p/hakuneko/code"
-DEPEND="x11-libs/wxGTK dev-libs/openssl net-misc/curl"
+DEPEND="x11-libs/wxGTK:2.8
+	dev-libs/openssl
+	net-misc/curl"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/code

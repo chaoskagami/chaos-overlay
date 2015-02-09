@@ -14,18 +14,18 @@ inherit distutils-r1
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
 
+KEYWORDS=""
 IUSE="gtk"
 DEPEND="${DEPEND}
 	dev-lang/python:2.7
-        >=dev-python/cython-0.19
-        dev-python/configparser
-        media-libs/libepoxy
-        media-libs/libsdl2
-        media-libs/sdl2-image
-        media-libs/sdl2-mixer
-        media-libs/sdl2-ttf
-        virtual/opengl
-        gtk? ( x11-libs/gtk+:3 )"
+	>=dev-python/cython-0.19
+	dev-python/configparser
+	media-libs/libepoxy
+	media-libs/libsdl2
+	media-libs/sdl2-image
+	media-libs/sdl2-mixer
+	media-libs/sdl2-ttf
+	virtual/opengl
+	gtk? ( x11-libs/gtk+:3 )"
 RDEPEND="${DEPEND}"
