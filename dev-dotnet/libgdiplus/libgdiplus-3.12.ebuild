@@ -33,8 +33,6 @@ DEPEND="${RDEPEND}"
 
 RESTRICT="test"
 
-PATCHES=("${FILESDIR}/${P}-giflib-quantizebuffer.patch")
-
 src_prepare() {
 	base_src_prepare
 	sed -i -e 's:ungif:gif:g' configure || die
