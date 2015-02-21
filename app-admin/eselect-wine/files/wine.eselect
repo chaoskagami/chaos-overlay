@@ -13,7 +13,6 @@ find_targets() {
 
 remove_symlink() {
 	rm "${EROOT}/usr/lib/wine/system"
-	rm "${EROOT}/usr/share/wine"
 }
 
 set_symlink() {
@@ -28,7 +27,6 @@ set_symlink() {
 		&& die -q "Invalid implementation \"$1\" specified."
 
 	ln -s "${target}" "${EROOT}/usr/lib/wine/system"
-	ln -s "${EROOT}/usr/lib/wine/${target}/share/wine" "${EROOT}/usr/share/wine"
 }
 
 ### Show Action ###
@@ -89,7 +87,7 @@ do_set() {
 		set_symlink "$1" || die -q "Couldn't set a new symlink"
 	elif [[ -e ${EROOT}/usr/lib/wine/system ]]; then
 		# we have something strange
-		die -q "${EROOT}/usr/lib/wine exists but is not a symlink"
+		die -q "${EROOT}/usr/lib/wine/system exists but is not a symlink"
 	else
 		set_symlink "$1" || die -q "Couldn't set a new symlink"
 	fi

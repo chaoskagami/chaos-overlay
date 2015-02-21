@@ -35,14 +35,12 @@ SRC_URI="${SRC_URI}
 
 LICENSE="LGPL-2.1"
 SLOT="${PV}"
-IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fontconfig +gecko gphoto2 gsm gstreamer +jpeg lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl pipelight +png +prelink pulseaudio +realtime +run-exes samba scanner selinux +ssl test +threads +truetype +udisks v4l +X xcomposite xinerama +xml"
+IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fontconfig +gecko gphoto2 gsm +jpeg lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl +png +prelink +realtime +run-exes samba scanner selinux +ssl test +threads +truetype +udisks v4l +X xcomposite xinerama +xml"
 REQUIRED_USE="|| ( abi_x86_32 abi_x86_64 )
 	test? ( abi_x86_32 )
 	elibc_glibc? ( threads )
-	gstreamer? ( pulseaudio )
 	mono? ( abi_x86_32 )
 	osmesa? ( opengl )" #286560
-# winepulse patches needed for gstreamer due to http://bugs.winehq.org/show_bug.cgi?id=30557
 
 # FIXME: the test suite is unsuitable for us; many tests require net access
 # or fail due to Xvfb's opengl limitations.
@@ -58,7 +56,6 @@ NATIVE_DEPEND="
 	fontconfig? ( media-libs/fontconfig:= )
 	gphoto2? ( media-libs/libgphoto2:= )
 	openal? ( media-libs/openal:= )
-	gstreamer? ( media-libs/gstreamer:0.10 media-libs/gst-plugins-base:0.10 )
 	X? (
 		x11-libs/libXcursor
 		x11-libs/libXext
@@ -118,13 +115,6 @@ COMMON_DEPEND="
 			openal? ( || (
 				app-emulation/emul-linux-x86-sdl[development,-abi_x86_32(-)]
 				>=media-libs/openal-1.15.1[abi_x86_32(-)]
-			) )
-			gstreamer? ( || (
-				app-emulation/emul-linux-x86-medialibs[development,-abi_x86_32(-)]
-				(
-					>=media-libs/gstreamer-0.10.36-r2:0.10[abi_x86_32(-)]
-					>=media-libs/gst-plugins-base-0.10.36:0.10[abi_x86_32(-)]
-				)
 			) )
 			X? ( || (
 				app-emulation/emul-linux-x86-xlibs[development,-abi_x86_32(-)]
@@ -291,13 +281,6 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 	)
-	if use gstreamer; then
-		# See http://bugs.winehq.org/show_bug.cgi?id=30557
-		ewarn "Applying experimental patch to fix GStreamer support. Note that"
-		ewarn "this patch has been reported to cause crashes in certain games."
-
-		PATCHES+=( "../${PULSE_PATCHES}"/gstreamer/*.patch )
-	fi
 	autotools-utils_src_prepare
 
 	if [[ "$(md5sum server/protocol.def)" != "${md5}" ]]; then
@@ -321,7 +304,6 @@ src_configure() {
 
 multilib_src_configure() {
 	local myconf=(
-		--sysconfdir=/etc/wine
 		$(use_with alsa)
 		$(use_with capi)
 		$(use_with lcms cms)
@@ -332,7 +314,6 @@ multilib_src_configure() {
 		$(use_with ssl gnutls)
 		$(use_with gphoto2 gphoto)
 		$(use_with gsm)
-		$(use_with gstreamer)
 		--without-hal
 		$(use_with jpeg)
 		$(use_with ldap)
@@ -356,6 +337,9 @@ multilib_src_configure() {
 		$(use_with xml)
 		$(use_with xml xslt)
 		--prefix=/usr/lib/wine/${PV}/
+		--sysconfdir=/etc/wine/${PV}/
+		--mandir=/usr/lib/wine/${PV}/man/
+		--datadir=/usr/lib/wine/${PV}/
 	)
 
 	local PKG_CONFIG AR RANLIB
@@ -423,11 +407,6 @@ multilib_src_install_all() {
 	for l in de fr pl; do
 		use linguas_${l} || rm -r "${D}"/usr/lib/wine/${PV}/share/man/${l}*
 	done
-	for f in "${D}"/usr/share/wine/*; do
-		mv "$f" "${D}"/usr/lib/wine/${PV}/share/wine/
-	done
-	rm -rf "${D}"/usr/share
-	rm -rf "${D}"/etc
 }
 
 pkg_preinst() {
