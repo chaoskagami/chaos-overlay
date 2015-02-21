@@ -13,7 +13,7 @@ games-emulation/rpcs3
 games-emulation/ppsspp-libretro
 
 # Build broken.
-dev-dotnet/libgdiplus-3.8
+=dev-dotnet/libgdiplus-3.8
 
 # 9999 version. Largely irrelevant - last update was six months ago. Still. 9999 -> mask.
 #=dev-java/jinput-9999
