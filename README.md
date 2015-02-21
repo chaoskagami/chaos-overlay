@@ -4,10 +4,7 @@ chaos-overlay
 Repoman Status: [![Build Status](https://travis-ci.org/chaoskagami/chaos-overlay.svg?branch=master)](https://travis-ci.org/chaoskagami/chaos-overlay)
 
 IMPORTANT NOTE ABOUT MULTI-SLOT WINE:
- - Currently, I'm investigating some issues with the locale variable, LANG. If you don't want issues with japanese games, now is a good time to put off this for later; I'll have it fixed ASAP.
- - I have completely butchered gentoo-wine and pulse patchsets. For reference, I hate pulseaudio. If you want multislot wine
-   and pulseaudio, you should do it yourself. I've also butchered pipelight, since it's shitty and experimental. The only
-   reason for this was netflix on linux, which we now have 4realz.
+ - I have completely butchered gentoo-wine and pulse patchsets. For reference, I hate pulseaudio. If you want multislot wine and pulseaudio, you should do it yourself. I've also butchered pipelight, since it's shitty and experimental. The only reason for this was netflix on linux, which we now have 4realz.
 
 Important things within this overlay:
  - The wine ebuilds in this repo are SLOT-based and can have multiple versions coexist inside of /usr/lib/wine. However, my ebuilds are incompatible with upstream for this reason and thus virtual/wine, app-emulation/wine, app-admin/eselect-wine are masked by default. Unmask if you wish to use them. Additionally - I am tracking unstable wine directly, so you will see the latest unstable pop up here rather quickly.
@@ -21,3 +18,4 @@ Important things within this overlay:
 
 More things:
  - Most frequently updated things are 9999. Or live ebuilds, if you prefer the term. smart-live-rebuild may be a good idea.
+ - Don't add my repo if you favor stability. You've been warned.
