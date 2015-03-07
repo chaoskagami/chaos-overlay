@@ -22,7 +22,27 @@ else
 	S=${WORKDIR}/${MY_P}
 fi
 
-GV="2.34"
+winegecko_version_check() {
+	if [[ ${PV} == ${1} ]] ; then
+		GV=$2
+	fi
+}
+
+winegecko_version_check "9999" "2.36"
+winegecko_version_check "1.7.38" "2.36"
+winegecko_version_check "1.7.37" "2.34"
+winegecko_version_check "1.7.36" "2.34"
+winegecko_version_check "1.7.35" "2.34"
+winegecko_version_check "1.7.34" "2.34"
+winegecko_version_check "1.7.33" "2.34"
+winegecko_version_check "1.7.32" "2.34"
+winegecko_version_check "1.7.31" "2.34"
+winegecko_version_check "1.7.30" "2.34"
+winegecko_version_check "1.7.29" "2.34"
+winegecko_version_check "1.7.28" "2.34"
+winegecko_version_check "1.7.27" "2.34"
+winegecko_version_check "1.6.1" "2.34"
+winegecko_version_check "1.6.2" "2.34"
 
 winemono_version_check() {
 	if [[ ${PV} == ${1} ]] ; then
