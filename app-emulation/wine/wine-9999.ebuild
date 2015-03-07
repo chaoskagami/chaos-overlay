@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.172 2014/06/29 00:42:47 tetromino Exp $
+# $Header: $
 
 EAPI="5"
 
@@ -23,7 +23,29 @@ else
 fi
 
 GV="2.34"
-MV="4.5.4"
+
+winemono_version_check() {
+	if [[ ${PV} == ${1} ]] ; then
+		MV=$2
+	fi
+}
+
+winemono_version_check "9999" "4.5.6"
+winemono_version_check "1.7.38" "4.5.6"
+winemono_version_check "1.7.37" "4.5.4"
+winemono_version_check "1.7.36" "4.5.4"
+winemono_version_check "1.7.35" "4.5.4"
+winemono_version_check "1.7.34" "4.5.4"
+winemono_version_check "1.7.33" "4.5.4"
+winemono_version_check "1.7.32" "4.5.4"
+winemono_version_check "1.7.31" "4.5.4"
+winemono_version_check "1.7.30" "4.5.4"
+winemono_version_check "1.7.29" "4.5.4"
+winemono_version_check "1.7.28" "4.5.4"
+winemono_version_check "1.7.27" "4.5.4"
+winemono_version_check "1.6.1" "4.5.4"
+winemono_version_check "1.6.2" "4.5.4"
+
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
@@ -35,7 +57,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="LGPL-2.1"
 SLOT="${PV}"
-IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fontconfig +gecko gphoto2 gsm +jpeg lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl +png +prelink +realtime +run-exes samba scanner selinux +ssl test +threads +truetype +udisks v4l +X xcomposite xinerama +xml"
+IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fontconfig +gecko gphoto2 gsm +jpeg lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl +png +prelink +realtime +run-exes samba scanner selinux +ssl test +threads +truetype +udisks v4l +X xcomposite xinerama +xml gstreamer"
 REQUIRED_USE="|| ( abi_x86_32 abi_x86_64 )
 	test? ( abi_x86_32 )
 	elibc_glibc? ( threads )
@@ -53,6 +75,7 @@ NATIVE_DEPEND="
 	capi? ( net-dialup/capi4k-utils )
 	ncurses? ( >=sys-libs/ncurses-5.2:= )
 	udisks? ( sys-apps/dbus )
+	gstreamer? ( media-libs/gstreamer:0.10 media-libs/gst-plugins-base:0.10 )
 	fontconfig? ( media-libs/fontconfig:= )
 	gphoto2? ( media-libs/libgphoto2:= )
 	openal? ( media-libs/openal:= )
@@ -115,6 +138,13 @@ COMMON_DEPEND="
 			openal? ( || (
 				app-emulation/emul-linux-x86-sdl[development,-abi_x86_32(-)]
 				>=media-libs/openal-1.15.1[abi_x86_32(-)]
+			) )
+			gstreamer? ( || (
+				app-emulation/emul-linux-x86-medialibs[development,-abi_x86_32(-)]
+				(
+					>=media-libs/gstreamer-0.10.36-r2:0.10[abi_x86_32(-)]
+					>=media-libs/gst-plugins-base-0.10.36:0.10[abi_x86_32(-)]
+				)
 			) )
 			X? ( || (
 				app-emulation/emul-linux-x86-xlibs[development,-abi_x86_32(-)]
@@ -281,6 +311,15 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 	)
+
+	if use gstreamer; then
+	# See http://bugs.winehq.org/show_bug.cgi?id=30557
+		ewarn "Applying experimental patch to fix GStreamer support. Note that"
+		ewarn "this patch has been reported to cause crashes in certain games."
+
+		PATCHES+=( "${FILESDIR}/${PN}-1.7.28-gstreamer-v4.patch" )
+	fi
+
 	autotools-utils_src_prepare
 
 	if [[ "$(md5sum server/protocol.def)" != "${md5}" ]]; then
@@ -314,6 +353,7 @@ multilib_src_configure() {
 		$(use_with ssl gnutls)
 		$(use_with gphoto2 gphoto)
 		$(use_with gsm)
+		$(use_with gstreamer)
 		--without-hal
 		$(use_with jpeg)
 		$(use_with ldap)
