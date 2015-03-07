@@ -4,11 +4,11 @@
 
 EAPI=5
 
-inherit eutils gnome2-utils cmake-utils games git-r3
+inherit eutils gnome2-utils cmake-utils games
 
 DESCRIPTION="An open source reimplementation of TES III: Morrowind"
 HOMEPAGE="http://openmw.org/"
-EGIT_REPO_URI="git://github.com/OpenMW/openmw"
+SRC_URI="https://github.com/OpenMW/openmw/archive/${P}.tar.gz"
 
 LICENSE="GPL-3 MIT BitstreamVera OFL-1.1"
 SLOT="0"
@@ -17,8 +17,7 @@ IUSE="devtools +ffmpeg +launcher test"
 
 # XXX static build
 RDEPEND=">=dev-games/mygui-3.2.0
-	>=dev-games/ogre-1.9.0[cg,freeimage,ois,opengl,zip]	# When OGRE is deprecated, this will be commented
-#	dev-games/openscenegraph				# and this line will be uncommented.
+	>=dev-games/ogre-1.8.0[cg,freeimage,ois,opengl,zip]
 	dev-games/ois
 	>=dev-libs/boost-1.46.0
 	dev-libs/tinyxml
@@ -36,12 +35,9 @@ DEPEND="${RDEPEND}
 	test? ( dev-cpp/gmock
 		dev-cpp/gtest )"
 
-src_prepare() {
-	ewarn "Please note: openmw's git is in constant flux, and as such"
-	ewarn "this may fail during compile. If so, sit around and wait"
-	ewarn "for a commit to fix it, or install a stable version instead."
-	ewarn "I guarantee nothing, okay? - @chaoskagami"
+S=${WORKDIR}/${PN}-${P}
 
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.15.0-cfg.patch \
 		"${FILESDIR}"/${PN}-0.26.0-build.patch
 
@@ -79,6 +75,7 @@ src_compile() {
 
 src_install() {
 	cmake-utils_src_install
+	dodoc readme.txt
 	prepgamesdirs
 }
 
@@ -87,9 +84,6 @@ src_test() {
 }
 
 pkg_preinst() {
-	ewarn "OpenMW is moving away from Ogre3D 1.0 in the future to utilize OpenSceneGraph."
-	ewarn "See here: https://openmw.org/2015/announcing-switch-openscenegraph/"
-	ewarn "When the Ogre3D backend is deprecated, the 9999 ebuild will be updated to reflect this."
 	games_pkg_preinst
 	gnome2_icon_savelist
 }
@@ -97,6 +91,8 @@ pkg_preinst() {
 pkg_postinst() {
 	games_pkg_postinst
 	gnome2_icon_cache_update
+	ewarn "The construction set opencs has been renamed to openmw-cs in this release."
+	einfo "A very early version of openmw-essimporter is available now to import MW saves."
 }
 
 pkg_postrm() {
