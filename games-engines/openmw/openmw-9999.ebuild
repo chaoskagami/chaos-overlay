@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,9 +16,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="devtools +ffmpeg +launcher test"
 
 # XXX static build
+# Add below when OGRE becomes deprecated.
+#	dev-games/openscenegraph
+# Also delete OGRE from RDEPEND
 RDEPEND=">=dev-games/mygui-3.2.0
-	>=dev-games/ogre-1.9.0[cg,freeimage,ois,opengl,zip]	# When OGRE is deprecated, this will be commented
-#	dev-games/openscenegraph				# and this line will be uncommented.
+	>=dev-games/ogre-1.9.0[cg,freeimage,ois,opengl,zip]
 	dev-games/ois
 	>=dev-libs/boost-1.46.0
 	dev-libs/tinyxml

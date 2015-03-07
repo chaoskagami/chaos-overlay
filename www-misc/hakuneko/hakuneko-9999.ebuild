@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 EHG_REPO_URI="http://hg.code.sf.net/p/hakuneko/code"
 DEPEND="x11-libs/wxGTK:2.8
-	dev-libs/openssl
+	dev-libs/openssl:0
 	net-misc/curl"
 RDEPEND="${DEPEND}"
 
