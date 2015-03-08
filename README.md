@@ -3,6 +3,8 @@ chaos-overlay
 
 Repoman Status: [![Build Status](https://travis-ci.org/chaoskagami/chaos-overlay.svg?branch=master)](https://travis-ci.org/chaoskagami/chaos-overlay)
 
+BIG FAT NOTICE - I'm no longer actively a gentoo user. They've been making stupid as shit decisions with the way they're going, and everything is subject to systemd/gnome-creep. I'm done. Seriously. That said bug reports are welcome if one of the 9999s aren't building, I'll make a stage3 chroot and attempt to fix build failures. Also, all the prompt update messages below are invalid now.
+
 IMPORTANT NOTE ABOUT MULTI-SLOT WINE:
  - I have completely butchered gentoo-wine and pulse patchsets. For reference, I hate pulseaudio. If you want multislot wine and pulseaudio, you should do it yourself. I've also butchered pipelight, since it's shitty and experimental. The only reason for this was netflix on linux, which we now have 4realz.
 
