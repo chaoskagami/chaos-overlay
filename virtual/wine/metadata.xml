@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-<longdescription>
-This ebuild drags in all of what is needed for SLOT-based wine to work.
-Again, do note that my ebuilds are completely incompatible with upstream. 
-</longdescription> 
-</pkgmetadata>
