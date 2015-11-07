@@ -5,8 +5,8 @@ Repoman Status: [![Build Status](https://travis-ci.org/chaoskagami/chaos-overlay
 
 BIG FAT NOTICE - I'm no longer actively a gentoo user. They've been making stupid as shit decisions with the way they're going, and everything is subject to systemd/gnome-creep. I'm done. Seriously. That said bug reports are welcome if one of the 9999s aren't building, I'll make a stage3 chroot and attempt to fix build failures. Also, all the prompt update messages below are invalid now. I make an effort to partially satisfy repoman, too.
 
-IMPORTANT NOTE ABOUT MULTI-SLOT WINE:
- - Removed. Use wine-overlay instead. They actively maintain it and are semi-official. Good stuff. Mine? Crappy unmaintained hack.
+IMPORTANT NOTES:
+ - Multi-slot wine has been removed. Use wine-overlay instead. They actively maintain it and are semi-official. Good stuff. Mine? Crappy unmaintained hack. You can still revert the removal if you want, but there's better alternativives.
  - libgdiplus and mono ebuild were removed. Use mono-overlay - again, semi-official.
 
 Important things within this overlay:
