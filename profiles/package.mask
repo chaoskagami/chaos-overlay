@@ -1,19 +1,5 @@
 # Openmw git is masked for stability reasons. Unmask if you want it.
 =games-engines/openmw-9999
 
-# Unmask to use wine from my repo.
-app-emulation/wine
-app-admin/eselect-wine
-virtual/wine
-
 # Not stable.
 games-emulation/rpcs3
-
-# Add layman abendbrot first. This is an addon of sorts.
-games-emulation/ppsspp-libretro
-
-# Build broken.
-=dev-dotnet/libgdiplus-3.8
-
-# 9999 version. Largely irrelevant - last update was six months ago. Still. 9999 -> mask.
-#=dev-java/jinput-9999
