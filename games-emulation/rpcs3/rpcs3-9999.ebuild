@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 	media-libs/freetype
 	media-libs/libsoundtouch
 	>=sys-devel/gcc-4.9
-	=sys-devel/llvm-3.6
+	sys-devel/llvm:0/3.6
 	x11-libs/wxGTK:${WX_GTK_VER}
 	"
 
