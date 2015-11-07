@@ -11,11 +11,11 @@ inherit cmake-utils eutils pax-utils toolchain-funcs versionator wxwidgets games
 if [[ ${PV} == 9999* ]]
 then
 	EGIT_HAS_SUBMODULES=1
-	EGIT_REPO_URI="https://github.com/DHrpcs3/rpcs3"
+	EGIT_REPO_URI="https://github.com/RPCS3/rpcs3"
 	inherit git-2
 	KEYWORDS=""
 else
-	SRC_URI="https://github.com/DHrpcs3/rpcs3/archive/v${PV}.tar.gz"
+	SRC_URI="https://github.com/RPCS3/rpcs3/archive/v${PV}.tar.gz"
 	KEYWORDS="~amd64"
 fi
 
@@ -32,18 +32,18 @@ RDEPEND=">=media-libs/glew-1.10
 	media-libs/openal
 	virtual/opengl
 	"
+
+# It says = with llvm for a reason.
+# rpcs3 uses a API that was removed in 3.7.
+
 DEPEND="${RDEPEND}
 	app-arch/zip
 	media-libs/freetype
 	media-libs/libsoundtouch
-	>=sys-devel/gcc-4.6.0
-	>=sys-devel/llvm-3.5.0
+	>=sys-devel/gcc-4.9
+	=sys-devel/llvm-3.6
 	x11-libs/wxGTK:${WX_GTK_VER}
 	"
-
-pkg_pretend() {
-	ewarn "As an quick warning, rpcs3 does not currently function on intel integrated graphics, so save yourself the pain and hit Ctrl+C or unmerge it"
-}
 
 src_configure() {
 	local mycmakeargs=(
@@ -70,10 +70,9 @@ src_compile() {
 
 src_install() {
 	# This is not working as expected - it appears to just install asmjit?
+	# cmake-utils_src_install
 
-	cmake-utils_src_install
-
-	dobin "${BUILD_DIR}"/bin/"${PN}"
+	dobin "${BUILD_DIR}/${PN}/${PN}"
 
 	make_desktop_entry "rpcs3" "rpcs3" "rpcs3" "Game;"
 
