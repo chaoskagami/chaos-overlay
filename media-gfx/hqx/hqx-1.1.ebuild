@@ -1,13 +1,12 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=5
 inherit eutils
 DESCRIPTION="hqx is a fast, high-quality magnification filter designed for pixel art"
-HOMEPAGE="https://code.google.com/p/hqx/"
-SRC_URI="https://hqx.googlecode.com/files/${P}.tar.gz"
-
+HOMEPAGE="https://hqx.googlecode.com/"
+SRC_URI="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hqx/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 
 SLOT="0"

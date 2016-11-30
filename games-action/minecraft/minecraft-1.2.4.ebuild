@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ RDEPEND="dev-java/gson:2.2.2
 	>=dev-java/bcprov-1.47:0
 	>=dev-java/commons-io-2.4:1
 	dev-java/commons-lang:3.3
-	dev-java/guava:17
+	dev-java/guava:18
 	dev-java/jinput:0
 	dev-java/jutils:0
 	>=dev-java/lwjgl-2.9.1

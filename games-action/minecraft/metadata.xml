@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer>
-<email>chaos dot kagami at gmail.com</email>
-<name>Jon Feldman</name>
-</maintainer>
 <longdescription lang="en">
 Originally from java-overlay. Just a slight fix.
 Minecraft is a commercial game about placing blocks to build anything

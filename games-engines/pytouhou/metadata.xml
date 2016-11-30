@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>chaos.kagami@gmail.com</email>
-		<name>Jon Feldman</name>
-	</maintainer>
 	<use>
 		<flag name="gtk">Build the GTK+3 interface</flag>
 	</use>

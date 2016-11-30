@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,7 +26,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-RDEPEND=">=media-libs/glew-1.10
+RDEPEND=">=media-libs/glew-1.10:0
 	x11-libs/libXext
 	x11-libs/libXrandr
 	media-libs/openal

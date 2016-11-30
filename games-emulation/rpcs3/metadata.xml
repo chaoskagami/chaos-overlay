@@ -6,8 +6,4 @@ RPCS3 is an experimental PS3 emulator. As of Oct '14, it can run three commercia
 games at 1/8 normal speed. It's marching along quickly, and is probably the
 first current-gen emulators that actually are going somewhere.
 </longdescription>
-    <maintainer>
-        <email>chaos.kagami@gmail.com</email>
-        <name>Jon Feldman</name>
-    </maintainer>
 </pkgmetadata>
